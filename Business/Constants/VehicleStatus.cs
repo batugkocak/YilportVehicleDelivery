@@ -6,8 +6,7 @@ public enum VehicleStatus
 {
     [Description("None")]
     None,
-    [Description("Müsait")]
-    Available,
-    [Description("Görevde")]
-    OnDuty,
+    Müsait,
+    Görevde,
 }
+
