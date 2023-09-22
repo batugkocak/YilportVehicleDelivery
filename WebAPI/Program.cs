@@ -14,6 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IVehicleService, VehicleManager>();
 builder.Services.AddSingleton<IVehicleDal, EfVehicleDal>();
 
+builder.Services.AddSingleton<IBrandService, BrandManager>();
+builder.Services.AddSingleton<IBrandDal, EfBrandDal >();
+
 
 var app = builder.Build();
 

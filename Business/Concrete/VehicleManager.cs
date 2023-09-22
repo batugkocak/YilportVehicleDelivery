@@ -10,12 +10,15 @@ using Entities.DTOs;
 
 namespace Business.Concrete;
 
+//TODO: Change the plate XXX to XXX_ when deleted, because of "CheckIfCarExistByPlate()".
 public class VehicleManager : IVehicleService
 {
     private IVehicleDal _vehicleDal;
-    public VehicleManager(IVehicleDal vehicleDal)
+    private IBrandService _brandService;
+    public VehicleManager(IVehicleDal vehicleDal, IBrandService brandService)
     {
         _vehicleDal = vehicleDal;
+        _brandService = brandService;
     }
 
 
@@ -25,20 +28,23 @@ public class VehicleManager : IVehicleService
         List<VehicleDetailsDto> detailsList = new List<VehicleDetailsDto>();
         foreach (var vehicle in vehicles)
         {
-            detailsList.Add( new VehicleDetailsDto()
+            if (!vehicle.IsDeleted)
             {
-                Plate = vehicle.Plate,
-                Type  = vehicle.Type.IntToString<VehicleType>(),
-                FuelType = vehicle.FuelType.IntToString<FuelType>(),
-                Owner  = "Owner Test", // Owner Table
-                Brand = "Brand Test", //Brand Table
-                ModelName = vehicle.ModelName,
-                ModelYear = vehicle.ModelYear,
-                Color = vehicle.Color.IntToString<VehicleColor>(),
-                Department = "Department Test", //Department Table
-                Status =  vehicle.Status.IntToString<VehicleStatus>(),
-                Note  = vehicle.Note
-            });
+                detailsList.Add( new VehicleDetailsDto()
+                {
+                    Plate = vehicle.Plate,
+                    Type  = vehicle.Type.IntToString<VehicleType>(),
+                    FuelType = vehicle.FuelType.IntToString<FuelType>(),
+                    Owner  = "Owner Test", // Owner Table
+                    Brand = _brandService.GetById(vehicle.BrandId).Data.Name, // Brand Table
+                    ModelName = vehicle.ModelName,
+                    ModelYear = vehicle.ModelYear,
+                    Color = vehicle.Color.IntToString<VehicleColor>(),
+                    Department = "Department Test", //Department Table
+                    Status =  vehicle.Status.IntToString<VehicleStatus>(),
+                    Note  = vehicle.Note
+                });
+            }
         }
         return new SuccessDataResult<List<VehicleDetailsDto>>(detailsList);
     }

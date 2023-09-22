@@ -12,8 +12,7 @@ public class VehicleDeliveryContext : DbContext
     }
 
     public DbSet<Vehicle> Vehicles { get; set; }
-    public DbSet<Department> Departments { get; set; }
-    public DbSet<Driver> Drivers { get; set; }
+    public DbSet<Brand> Brands { get; set; }
 
     public override int SaveChanges()
     {
@@ -46,9 +45,6 @@ public class VehicleDeliveryContext : DbContext
                 track.Changed = DateTime.Now;
             }
         }
-
-
-
         return base.SaveChanges();
     }
 }
