@@ -26,4 +26,16 @@ public static class EnumExtensions
         }
         throw new ArgumentException("Not found.", nameof(description));
     }
+    
+    
+    public static T ToEnum<T>(this string enumString)
+    {
+        return (T) Enum.Parse(typeof (T), enumString);
+    }
+
+    public static string IntToString<T>(this int val)
+    {
+        // ((VehicleStatus)vehicle.Status).ToString(),
+        return Enum.GetNames(typeof(T))[val];
+    }
 }

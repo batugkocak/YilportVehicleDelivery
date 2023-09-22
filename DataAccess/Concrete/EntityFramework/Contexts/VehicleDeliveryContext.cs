@@ -29,6 +29,7 @@ public class VehicleDeliveryContext : DbContext
             {
                 var track = entity as BaseEntity;
                 track.Created = DateTime.Now;
+                track.IsDeleted = false;
             }
         }
         
