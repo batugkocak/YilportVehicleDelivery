@@ -7,7 +7,10 @@ namespace Business.Abstract;
 
 public interface IVehicleService
 {
-    IDataResult<List<VehicleDetailsDto>> GetAll();
+    IDataResult<List<VehicleDetailDto>> GetAll();
+    
+    // IDataResult<List<VehicleDetailDto>> GetAllWithoutService();
+
     IDataResult<Vehicle> GetById(int vehicleId);
     IResult Add(Vehicle vehicle);
     IResult Delete(Vehicle vehicle);

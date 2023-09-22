@@ -13,7 +13,6 @@ public enum VehicleType
     İtfaiye,
     Kamyonet
 }
-// //TODO: Include all colors
 // public enum VehicleType
 // {
 //     [Description("None")]

@@ -14,47 +14,24 @@ namespace Business.Concrete;
 public class VehicleManager : IVehicleService
 {
     private IVehicleDal _vehicleDal;
-    private IBrandService _brandService;
-    public VehicleManager(IVehicleDal vehicleDal, IBrandService brandService)
+    // private IBrandService _brandService;
+    // private IOwnerService _ownerService;
+    // private IDepartmentService _departmentService;
+    public VehicleManager(IVehicleDal vehicleDal)
     {
         _vehicleDal = vehicleDal;
-        _brandService = brandService;
     }
-
-
-    public IDataResult<List<VehicleDetailsDto>> GetAll()
+    
+    public IDataResult<List<VehicleDetailDto>> GetAll()
     {
-        var vehicles = _vehicleDal.GetAll();
-        List<VehicleDetailsDto> detailsList = new List<VehicleDetailsDto>();
-        foreach (var vehicle in vehicles)
-        {
-            if (!vehicle.IsDeleted)
-            {
-                detailsList.Add( new VehicleDetailsDto()
-                {
-                    Plate = vehicle.Plate,
-                    Type  = vehicle.Type.IntToString<VehicleType>(),
-                    FuelType = vehicle.FuelType.IntToString<FuelType>(),
-                    Owner  = "Owner Test", // Owner Table
-                    Brand = _brandService.GetById(vehicle.BrandId).Data.Name, // Brand Table
-                    ModelName = vehicle.ModelName,
-                    ModelYear = vehicle.ModelYear,
-                    Color = vehicle.Color.IntToString<VehicleColor>(),
-                    Department = "Department Test", //Department Table
-                    Status =  vehicle.Status.IntToString<VehicleStatus>(),
-                    Note  = vehicle.Note
-                });
-            }
-        }
-        return new SuccessDataResult<List<VehicleDetailsDto>>(detailsList);
+        return new SuccessDataResult<List<VehicleDetailDto>>(_vehicleDal.GetVehicleDetails());
     }
 
     public IDataResult<Vehicle> GetById(int vehicleId)
     {
         return new SuccessDataResult<Vehicle>(_vehicleDal.Get(v => v.Id == vehicleId));
     }
-
-    //TODO: Should I Get IDs of Owner, Department from API? OR should I cast them somehow?
+    
     public IResult Add(Vehicle vehicle)
     {
         var result = BusinessRules.Run(CheckIfCarExistByPlate(vehicle.Plate!));
@@ -87,3 +64,37 @@ public class VehicleManager : IVehicleService
         return new SuccessResult();
     }
 }
+
+
+
+
+// public IDataResult<List<VehicleDetailDto>> GetAll()
+// {
+//     var vehicles = _vehicleDal.GetAll();
+//     List<VehicleDetailDto> detailsList = new List<VehicleDetailDto>();
+//     foreach (var vehicle in vehicles)
+//     {
+//         if (!vehicle.IsDeleted)
+//         {
+//             var owner = _ownerService.GetById(vehicle.OwnerId).Data;
+//             var brand = _brandService.GetById(vehicle.BrandId).Data;
+//             var department = _departmentService.GetById(vehicle.DepartmentId).Data;
+//             
+//             detailsList.Add( new VehicleDetailDto()
+//             {
+//                 Plate = vehicle.Plate,
+//                 Type  = vehicle.Type.IntToString<VehicleType>(),
+//                 FuelType = vehicle.FuelType.IntToString<FuelType>(),
+//                 Owner  = owner.Name + " " + owner.Surname, //Owner Table
+//                 Brand = brand.Name, // Brand Table
+//                 ModelName = vehicle.ModelName,
+//                 ModelYear = vehicle.ModelYear,
+//                 Color = vehicle.Color.IntToString<VehicleColor>(),
+//                 Department = department.Name, // Departmant Table
+//                 Status =  vehicle.Status.IntToString<VehicleStatus>(),
+//                 Note  = vehicle.Note
+//             });
+//         }
+//     }
+//     return new SuccessDataResult<List<VehicleDetailDto>>(detailsList);
+// }

@@ -21,6 +21,7 @@ public class VehicleController : Controller
         var result = _vehicleService.GetAll();
         return Ok(result.Data);
     }
+    
     [HttpGet("{vehicleId}")]
     public IActionResult Get(int vehicleId)
     {

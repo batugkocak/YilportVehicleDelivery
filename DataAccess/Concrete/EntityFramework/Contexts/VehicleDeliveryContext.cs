@@ -13,6 +13,8 @@ public class VehicleDeliveryContext : DbContext
 
     public DbSet<Vehicle> Vehicles { get; set; }
     public DbSet<Brand> Brands { get; set; }
+    public DbSet<Owner> Owners { get; set; }
+    public DbSet<Department> Departments { get; set; }
 
     public override int SaveChanges()
     {
@@ -45,6 +47,20 @@ public class VehicleDeliveryContext : DbContext
                 track.Changed = DateTime.Now;
             }
         }
+
+        var deleted = ChangeTracker.Entries()
+            .Where(t => t.State == EntityState.Deleted)
+            .Select(t => t.Entity).ToArray();
+        
+        foreach (var entity in deleted)
+        {
+            if (entity is BaseEntity)
+            {
+                var track = entity as BaseEntity;
+                track.IsDeleted = true;
+            }
+        }
+        
         return base.SaveChanges();
     }
 }

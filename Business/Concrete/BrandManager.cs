@@ -12,11 +12,9 @@ public class BrandManager : IBrandService
     {
         _brandDal = brandDal;
     }
-    
+
     public IDataResult<Brand> GetById(int brandId)
     {
-        Brand brand = _brandDal.Get(b => b.Id == brandId);
-        //return new SuccessDataResult<Vehicle>(_vehicleDal.Get(v => v.Id == vehicleId));
-        return new SuccessDataResult<Brand>(brand);
+        return new SuccessDataResult<Brand>(_brandDal.Get(b => b.Id == brandId));
     }
 }
