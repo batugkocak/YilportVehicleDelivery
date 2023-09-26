@@ -19,14 +19,22 @@ public class VehicleController : Controller
     public IActionResult Get()
     {
         var result = _vehicleService.GetAll();
-        return Ok(result.Data);
+        return Ok(result);
+    }
+    
+    [Route("Details")]
+    [HttpGet]
+    public IActionResult GetDetailed()
+    {
+        var result = _vehicleService.GetAllDetails();
+        return Ok(result);
     }
     
     [HttpGet("{vehicleId}")]
     public IActionResult Get(int vehicleId)
     {
         var result = _vehicleService.GetById(vehicleId);
-        return Ok(result.Data);
+        return Ok(result);
     }
 
     [HttpPost]

@@ -1,6 +1,7 @@
 using Core.Entities;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Task = Entities.Concrete.Task;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts;
 
@@ -16,6 +17,10 @@ public class VehicleDeliveryContext : DbContext
     public DbSet<Owner> Owners { get; set; }
     public DbSet<Department> Departments { get; set; }
 
+    public DbSet<Driver> Drivers { get; set; }
+    public DbSet<Task> Tasks { get; set; }
+    public DbSet<VehicleOnTask> VehiclesOnTask { get; set; }
+
     public override int SaveChanges()
     {
         ChangeTracker.DetectChanges();
@@ -29,8 +34,11 @@ public class VehicleDeliveryContext : DbContext
             if (entity is BaseEntity)
             {
                 var track = entity as BaseEntity;
-                track.Created = DateTime.Now;
-                track.IsDeleted = false;
+                if (track != null)
+                {
+                    track.Created = DateTime.Now;
+                    track.IsDeleted = false;
+                }
             }
         }
         
@@ -44,22 +52,11 @@ public class VehicleDeliveryContext : DbContext
             if (entity is BaseEntity)
             {
                 var track = entity as BaseEntity;
-                track.Changed = DateTime.Now;
+                if (track != null) track.Changed = DateTime.Now;
             }
         }
 
-        var deleted = ChangeTracker.Entries()
-            .Where(t => t.State == EntityState.Deleted)
-            .Select(t => t.Entity).ToArray();
-        
-        foreach (var entity in deleted)
-        {
-            if (entity is BaseEntity)
-            {
-                var track = entity as BaseEntity;
-                track.IsDeleted = true;
-            }
-        }
+
         
         return base.SaveChanges();
     }

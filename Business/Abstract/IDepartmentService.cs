@@ -5,6 +5,10 @@ namespace Business.Abstract;
 
 public interface IDepartmentService
 {
-    IDataResult<Department> GetById(int departmentId);
+    IDataResult<List<Department>> GetAll();
+    IDataResult<Department> GetById(int brandId);
+    IResult Add(Department brand);
+    IResult Delete(Department brand);
+    IResult Update(Department brand);
 
 }

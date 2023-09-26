@@ -2,6 +2,7 @@ using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,24 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IVehicleService, VehicleManager>();
 builder.Services.AddSingleton<IVehicleDal, EfVehicleDal>();
+
+builder.Services.AddSingleton<IVehicleOnTaskService, VehicleOnTaskManager>();
+builder.Services.AddSingleton<IVehicleOnTaskDal, EfVehicleOnTaskDal>();
+
+builder.Services.AddSingleton<IBrandService, BrandManager>();
+builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+
+builder.Services.AddSingleton<IDriverService, DriverManager>();
+builder.Services.AddSingleton<IDriverDal, EfDriverDal>();
+
+builder.Services.AddSingleton<ITaskService, TaskManager>();
+builder.Services.AddSingleton<ITaskDal, EfTaskDal>();
+
+builder.Services.AddSingleton<IDepartmentService, DepartmentManager>();
+builder.Services.AddSingleton<IDepartmentDal, EfDepartmentDal>();
+
+builder.Services.AddSingleton<IOwnerService, OwnerManager>();
+builder.Services.AddSingleton<IOwnerDal, EfOwnerDal>();
 
 
 var app = builder.Build();

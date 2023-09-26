@@ -5,5 +5,9 @@ namespace Business.Abstract;
 
 public interface IOwnerService
 {
-    IDataResult<Owner> GetById(int ownerId);
+    IDataResult<List<Owner>> GetAll();
+    IDataResult<Owner> GetById(int brandId);
+    IResult Add(Owner brand);
+    IResult Delete(Owner brand);
+    IResult Update(Owner brand);
 }

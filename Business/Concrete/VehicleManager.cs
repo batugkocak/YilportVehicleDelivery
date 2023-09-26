@@ -14,17 +14,20 @@ namespace Business.Concrete;
 public class VehicleManager : IVehicleService
 {
     private IVehicleDal _vehicleDal;
-    // private IBrandService _brandService;
-    // private IOwnerService _ownerService;
-    // private IDepartmentService _departmentService;
+
     public VehicleManager(IVehicleDal vehicleDal)
     {
         _vehicleDal = vehicleDal;
     }
     
-    public IDataResult<List<VehicleDetailDto>> GetAll()
+    public IDataResult<List<Vehicle>> GetAll()
     {
-        return new SuccessDataResult<List<VehicleDetailDto>>(_vehicleDal.GetVehicleDetails());
+        return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
+    }
+    
+    public IDataResult<List<VehicleDetailDto>> GetAllDetails()
+    {
+        return new SuccessDataResult<List<VehicleDetailDto>>(_vehicleDal.GetVehicleDetails(), Messages.VehiclesListed);
     }
 
     public IDataResult<Vehicle> GetById(int vehicleId)
@@ -50,9 +53,11 @@ public class VehicleManager : IVehicleService
 
     public IResult Update(Vehicle vehicle)
     {
-        throw new NotImplementedException();
+        _vehicleDal.Update(vehicle);
+        return new SuccessResult(Messages.VehicleUpdated);
     }
     
+    //
     private IResult CheckIfCarExistByPlate(String plate)
     {
         var result = _vehicleDal.GetAll(u => u.Plate == plate).Any();
@@ -64,37 +69,3 @@ public class VehicleManager : IVehicleService
         return new SuccessResult();
     }
 }
-
-
-
-
-// public IDataResult<List<VehicleDetailDto>> GetAll()
-// {
-//     var vehicles = _vehicleDal.GetAll();
-//     List<VehicleDetailDto> detailsList = new List<VehicleDetailDto>();
-//     foreach (var vehicle in vehicles)
-//     {
-//         if (!vehicle.IsDeleted)
-//         {
-//             var owner = _ownerService.GetById(vehicle.OwnerId).Data;
-//             var brand = _brandService.GetById(vehicle.BrandId).Data;
-//             var department = _departmentService.GetById(vehicle.DepartmentId).Data;
-//             
-//             detailsList.Add( new VehicleDetailDto()
-//             {
-//                 Plate = vehicle.Plate,
-//                 Type  = vehicle.Type.IntToString<VehicleType>(),
-//                 FuelType = vehicle.FuelType.IntToString<FuelType>(),
-//                 Owner  = owner.Name + " " + owner.Surname, //Owner Table
-//                 Brand = brand.Name, // Brand Table
-//                 ModelName = vehicle.ModelName,
-//                 ModelYear = vehicle.ModelYear,
-//                 Color = vehicle.Color.IntToString<VehicleColor>(),
-//                 Department = department.Name, // Departmant Table
-//                 Status =  vehicle.Status.IntToString<VehicleStatus>(),
-//                 Note  = vehicle.Note
-//             });
-//         }
-//     }
-//     return new SuccessDataResult<List<VehicleDetailDto>>(detailsList);
-// }
