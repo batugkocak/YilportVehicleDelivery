@@ -4,6 +4,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Task = Entities.Concrete.Task;
 
 namespace Business.Concrete;
@@ -21,6 +22,13 @@ public class TaskManager : ITaskService
     {
         return new SuccessDataResult<List<Task>>(_taskDal.GetAll(), Messages.TaskListed);
     }
+
+    public IDataResult<List<TaskDetailDto>> GetAllDetails()
+    {
+        return new SuccessDataResult<List<TaskDetailDto>>(_taskDal.GetTaskDetails(), Messages.TaskListed);
+
+    }
+    
 
     public IDataResult<Task> GetById(int taskId)
     {

@@ -20,7 +20,14 @@ public static class Messages
     public const string TaskListed= "Görev başarıyla getirildi.";
     public const string TaskDeleted= "Görev başarıyla bitirildi.";
     
+    //VehicleOnTask
     public const string VehicleAlreadyOnTask = "Seçtiğiniz araç şuan görevde.";
+    public const string VehicleOnTaskAdded = "Araç görevlendirildi.";
+    public const string VehiclesOnTaskListed = "Araç görevleri başarıyla listelendi.";
+    public const string VehicleOnTaskUpdated = "Araç görevi güncellendi.";
+    public const string VehicleOnTaskListed = "Araç görevi başarıyla güncellendi.";
+    public const string VehicleOnTaskDeleted = "Araç görevi silindi.";
+
     
     //Driver
     public const string DriverAdded = "Sürücü başarıyla eklendi";

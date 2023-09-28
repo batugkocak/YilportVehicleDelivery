@@ -25,9 +25,9 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
     }
     
-    public IDataResult<List<VehicleDetailDto>> GetAllDetails()
+    public IDataResult<List<VehicleForTableDto>> GetAllDetails()
     {
-        return new SuccessDataResult<List<VehicleDetailDto>>(_vehicleDal.GetVehicleDetails(), Messages.VehiclesListed);
+        return new SuccessDataResult<List<VehicleForTableDto>>(_vehicleDal.GetVehicleDetails(), Messages.VehiclesListed);
     }
 
     public IDataResult<Vehicle> GetById(int vehicleId)

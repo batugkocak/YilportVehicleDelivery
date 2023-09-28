@@ -1,6 +1,7 @@
 using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Task = Entities.Concrete.Task;
 
 namespace WebAPI.Controllers;
 
@@ -9,31 +10,39 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class TaskController : Controller
 {
-    private IVehicleOnTaskService _vehicleOnTaskService;
+    private ITaskService _taskService;
 
-    public TaskController(IVehicleOnTaskService vehicleOnTaskService)
+    public TaskController(ITaskService taskService)
     {
-        _vehicleOnTaskService = vehicleOnTaskService;
+        _taskService = taskService;
     }
     
     [HttpGet]
     public IActionResult Get()
     {
-        var result = _vehicleOnTaskService.GetAll();
+        var result = _taskService.GetAll();
+        return Ok(result);
+    }
+    
+    [Route("Details")]
+    [HttpGet]
+    public IActionResult GetDetailed()
+    {
+        var result = _taskService.GetAllDetails();
         return Ok(result);
     }
     
     [HttpGet("{taskId}")]
     public IActionResult Get(int taskId)
     {
-        var result = _vehicleOnTaskService.GetById(taskId);
+        var result = _taskService.GetById(taskId);
         return Ok(result);
     }
     
     [HttpPost]
-    public IActionResult Add(VehicleOnTask vehicleOnTask)
+    public IActionResult Add(Task task)
     {
-        var result = _vehicleOnTaskService.Add(vehicleOnTask);
+        var result = _taskService.Add(task);
         if (result.Success)
         {
             return Ok(result.Message);

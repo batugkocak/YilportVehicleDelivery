@@ -6,5 +6,7 @@ namespace DataAccess.Abstract;
 
 public interface IVehicleDal : IEntityRepository<Vehicle>
 {
-    public List<VehicleDetailDto> GetVehicleDetails();
+    public List<VehicleForTableDto> GetVehicleDetails();
+    public VehicleDetailDto GetVehicleDetailsById(int vehicleId);
+
 }

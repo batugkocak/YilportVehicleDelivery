@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using Task = Entities.Concrete.Task;
 
 namespace Business.Abstract;
@@ -11,4 +12,7 @@ public interface ITaskService
     IResult Add(Task task);
     IResult Delete(Task task);
     IResult Update(Task task);
+
+    IDataResult<List<TaskDetailDto>> GetAllDetails();
+
 }

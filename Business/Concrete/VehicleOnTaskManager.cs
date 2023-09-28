@@ -22,17 +22,17 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
 
     public IDataResult<List<VehicleOnTask>> GetAll()
     {
-        return new SuccessDataResult<List<VehicleOnTask>>(_vehicleOnTaskDal.GetAll(vod => vod.IsDeleted != true));
+        return new SuccessDataResult<List<VehicleOnTask>>(_vehicleOnTaskDal.GetAll(vod => vod.IsDeleted != true), Messages.VehiclesOnTaskListed);
     }
     
     public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails()
     {
-        return new SuccessDataResult<List<VehicleOnTaskDetailDto>>(_vehicleOnTaskDal.GetVehicleOnTaskDetailDal());
+        return new SuccessDataResult<List<VehicleOnTaskDetailDto>>(_vehicleOnTaskDal.GetVehicleOnTaskDetailDal(), Messages.VehiclesOnTaskListed);
     }
 
     public IDataResult<VehicleOnTask> GetById(int taskId)
     {
-        return new SuccessDataResult<VehicleOnTask>(_vehicleOnTaskDal.Get(vt => vt.Id == taskId));
+        return new SuccessDataResult<VehicleOnTask>(_vehicleOnTaskDal.Get(vt => vt.Id == taskId), Messages.VehicleOnTaskListed);
     }
 
     public IResult Add(VehicleOnTask vehicleOnTask)
@@ -51,7 +51,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
        _vehicleService.Update(updatedVehicle);
 
         _vehicleOnTaskDal.Add(vehicleOnTask);
-        return new SuccessResult(Messages.TaskAdded);
+        return new SuccessResult(Messages.VehicleOnTaskAdded);
     }
 
     public IResult Delete(VehicleOnTask vehicleOnTask)
@@ -65,28 +65,28 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         //
         // _vehicleOnTaskDal.Update(vehicleOnTask);
         //TODO: 
-        return new SuccessResult("Not worked");
+        return new SuccessResult(Messages.VehicleOnTaskDeleted);
     }
 
     public IResult Update(VehicleOnTask vehicleOnTask)
     {
         _vehicleOnTaskDal.Update(vehicleOnTask);
-        return new SuccessResult(Messages.TaskUpdated);
+        return new SuccessResult(Messages.VehicleOnTaskUpdated);
     }
     
     public IResult FinishTask(int taskId)
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);
         vehicleTask.ReturnDate = DateTime.Now;
-        vehicleTask.IsDeleted = true;
+        vehicleTask.IsDeleted = true; //TODO: This might be isFinished or etc.
         
          var updatedVehicle =  _vehicleService.GetById(vehicleTask.VehicleId).Data;
-         updatedVehicle.Status = 1; 
+         updatedVehicle.Status = (int) VehicleStatus.Görevde;
          _vehicleService.Update(updatedVehicle);
         
         
         _vehicleOnTaskDal.Update(vehicleTask);
-        return new SuccessResult(Messages.TaskUpdated);
+        return new SuccessResult(Messages.VehicleOnTaskUpdated);
     }
     
     private IResult CheckIfVehicleOnDutyById(int vehicleId)

@@ -16,7 +16,6 @@ public class VehicleDeliveryContext : DbContext
     public DbSet<Brand> Brands { get; set; }
     public DbSet<Owner> Owners { get; set; }
     public DbSet<Department> Departments { get; set; }
-
     public DbSet<Driver> Drivers { get; set; }
     public DbSet<Task> Tasks { get; set; }
     public DbSet<VehicleOnTask> VehiclesOnTask { get; set; }

@@ -32,12 +32,10 @@ public class EfEntityRepositoryBase<TEntity, TContext> :IEntityRepository<TEntit
 
     public List<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter = null)
     {
-        using TContext context = new TContext();
-        if (filter == null)
-        {
-            return context.Set<TEntity>().ToList();
-        }
-        return context.Set<TEntity>().Where(filter).ToList();
+        using var context = new TContext();
+        return filter == null
+            ? context.Set<TEntity>().ToList()
+            : context.Set<TEntity>().Where(filter).ToList();
     }
 
     public void Update(TEntity entity)
