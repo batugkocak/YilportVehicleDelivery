@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Business.Abstract;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -70,9 +71,11 @@ public class VehicleManager : IVehicleService
         return new ErrorDataResult<Vehicle>(null, Messages.NotFound);
     }
     
+
+    [ValidationAspect(typeof(VehicleValidator))]
     public IResult Add(Vehicle vehicle)
     {
-        ValidationTool.Validate(new VehicleValidator(), vehicle);
+
         
         var result = BusinessRules.Run(CheckIfCarExistByPlate(vehicle.Plate!));
         if (result != null)

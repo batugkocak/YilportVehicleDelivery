@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added global ValidationTool to validate entities with FluentValidation">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added ValidationAspect and tested on VehicleManager.Add" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -105,7 +104,7 @@
       <workItem from="1698401614014" duration="28000" />
       <workItem from="1698401650592" duration="15000" />
       <workItem from="1698401674866" duration="20000" />
-      <workItem from="1698401703829" duration="5559000" />
+      <workItem from="1698401703829" duration="6972000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -171,20 +170,49 @@
       <option name="project" value="LOCAL" />
       <updated>1698408754450</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Added base AOP classes">
+      <option name="closed" value="true" />
+      <created>1698409339403</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698409339403</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: Added ValidationAspect and tested on VehicleManager.Add">
+      <option name="closed" value="true" />
+      <created>1698409744274</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698409744274</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client" />
     <MESSAGE value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
     <MESSAGE value="chore: Update .gitignore" />
     <MESSAGE value="feat: Added global ValidationTool to validate entities with FluentValidation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added global ValidationTool to validate entities with FluentValidation" />
+    <MESSAGE value="feat: Added base AOP classes" />
+    <MESSAGE value="feat: Added ValidationAspect and tested on VehicleManager.Add" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added ValidationAspect and tested on VehicleManager.Add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

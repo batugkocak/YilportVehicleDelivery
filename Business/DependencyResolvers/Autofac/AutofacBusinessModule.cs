@@ -1,6 +1,9 @@
 using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
@@ -30,6 +33,15 @@ public class AutofacBusinessModule : Module
 
     builder.RegisterType<OwnerManager>().As<IOwnerService>();
     builder.RegisterType<EfOwnerDal>().As<IOwnerDal>();
+    
+    
+    var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+    builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+      .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+      {
+        Selector = new AspectInterceptorSelector()
+      }).SingleInstance();
 
   }
 }
