@@ -30,7 +30,7 @@ public class BrandController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Brand brand)
+    public IActionResult Post(Brand brand)
     {
         var result = _brandService.Add(brand);
         if (result.Success)

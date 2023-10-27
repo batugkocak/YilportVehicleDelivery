@@ -31,7 +31,7 @@ public class OwnerController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Owner owner)
+    public IActionResult Post(Owner owner)
     {
         var result = _ownerService.Add(owner);
         if (result.Success)

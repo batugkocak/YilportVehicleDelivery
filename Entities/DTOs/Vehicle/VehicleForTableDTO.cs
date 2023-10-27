@@ -1,7 +1,8 @@
 namespace Entities.DTOs;
 
-public class VehicleForTableDto
+public class VehicleForTableDTO
 {
+    public int Id { get; set; }
     public string? Plate { get; set; } 
     public string? Type { get; set; } 
     public string? Brand { get; set; } 

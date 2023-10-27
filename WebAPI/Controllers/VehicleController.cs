@@ -1,6 +1,7 @@
 using Business.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -15,32 +16,88 @@ public class VehicleController : Controller
     {
         _vehicleService = vehicleService;
     }
-    [HttpGet]
-    public IActionResult Get()
-    {
-        var result = _vehicleService.GetAll();
-        return Ok(result);
-    }
     
-    [Route("Details")]
+    // [HttpGet]
+    // public IActionResult Get()
+    // {
+    //     var result = _vehicleService.GetAll();
+    //     return Ok(result);
+    // }
+    
+    [Route("DetailsForTable")]
     [HttpGet]
     public IActionResult GetDetailed()
     {
-        var result = _vehicleService.GetAllDetails();
+        var result = _vehicleService.GetAllDetailsForTable();
         return Ok(result);
+    }
+    
+    
+    [Route("{vehicleId}/Details")]
+    [HttpGet]
+    public IActionResult GetDetailed(int vehicleId)
+    {
+        var result = _vehicleService.GetDetailsById(vehicleId);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result.Message);
     }
     
     [HttpGet("{vehicleId}")]
     public IActionResult Get(int vehicleId)
     {
         var result = _vehicleService.GetById(vehicleId);
-        return Ok(result);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result.Message);
     }
+    
 
     [HttpPost]
-    public IActionResult Add(Vehicle vehicle)
+    public IActionResult Post(Vehicle vehicle)
     {
         var result = _vehicleService.Add(vehicle);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+
+    [Route("CheckPlate")]
+    [HttpGet]
+    public IActionResult CheckByPlate(string plate)
+    {
+        var result = _vehicleService.CheckIfCarExistByPlate(plate);
+        if (!result.Success)
+        {
+            return BadRequest(result.Message);
+        }
+        return Ok();
+    }
+    
+    [Route("Update")]
+    [HttpPost]
+    public IActionResult Update(Vehicle vehicle)
+    {
+        var result = _vehicleService.Update(vehicle);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    [Route("Delete")]
+    [HttpPost]
+    public IActionResult Delete(Vehicle vehicle)
+    {
+        var result = _vehicleService.Delete(vehicle);
         if (result.Success)
         {
             return Ok(result.Message);

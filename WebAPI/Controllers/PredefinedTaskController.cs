@@ -8,11 +8,11 @@ namespace WebAPI.Controllers;
 
 [Route("[controller]s")]
 [ApiController]
-public class TaskController : Controller
+public class PredefinedTaskController : Controller
 {
-    private ITaskService _taskService;
+    private readonly ITaskService _taskService;
 
-    public TaskController(ITaskService taskService)
+    public PredefinedTaskController(ITaskService taskService)
     {
         _taskService = taskService;
     }
@@ -40,7 +40,7 @@ public class TaskController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Task task)
+    public IActionResult Post(Task task)
     {
         var result = _taskService.Add(task);
         if (result.Success)

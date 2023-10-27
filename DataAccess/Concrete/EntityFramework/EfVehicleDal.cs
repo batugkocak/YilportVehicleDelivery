@@ -10,7 +10,7 @@ namespace DataAccess.Concrete.EntityFramework;
 
 public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryContext>, IVehicleDal
 {
-    public VehicleDetailDto GetVehicleDetailsById(int vehicleId)
+    public VehicleDetailDTO GetVehicleDetailsById(int vehicleId)
     {
         using VehicleDeliveryContext dtoContext = new VehicleDeliveryContext();
         var result = (from v in dtoContext.Vehicles
@@ -18,8 +18,9 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
             join b in dtoContext.Brands on v.BrandId equals b.Id
             join o in dtoContext.Owners on v.OwnerId equals o.Id
             where v.Id == vehicleId
-            select new VehicleDetailDto
+            select new VehicleDetailDTO
             {
+                Id = v.Id,
                 Plate = v.Plate,
                 Type  = v.Type.IntToString<VehicleType>(),
                 FuelType = v.FuelType.IntToString<FuelType>(),
@@ -36,15 +37,17 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
         return result;
     }
 
-    List<VehicleForTableDto> IVehicleDal.GetVehicleDetails()
+    List<VehicleForTableDTO> IVehicleDal.GetVehicleDetails()
     {
         using VehicleDeliveryContext dtoContext = new VehicleDeliveryContext();
         var result = (from v in dtoContext.Vehicles
             join d in dtoContext.Departments on v.DepartmentId equals d.Id
             join b in dtoContext.Brands on v.BrandId equals b.Id
             join o in dtoContext.Owners on v.OwnerId equals o.Id
-            select new VehicleForTableDto()
+            where v.IsDeleted != true
+            select new VehicleForTableDTO()
             {
+                Id = v.Id,
                 Plate = v.Plate,
                 Type  = v.Type.IntToString<VehicleType>(),
                 Brand = b.Name, // Brand Table

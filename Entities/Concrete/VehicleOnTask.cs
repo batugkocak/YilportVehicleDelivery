@@ -10,6 +10,10 @@ public class VehicleOnTask : BaseEntity
     public int DriverId { get; set; }
     public int DepartmentId { get; set; }
     public string? AuthorizedPerson { get; set; }
+    
+    public string? Address { get; set; }
+    
+    public string? TaskDefinition { get; set; }
     public DateTime GivenDate { get; set; }
     public DateTime ReturnDate { get; set; }
 }

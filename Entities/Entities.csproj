@@ -10,4 +10,10 @@
       <ProjectReference Include="..\Core\Core.csproj" />
     </ItemGroup>
 
+
+
+    <ItemGroup>
+      <Compile Remove="DTOs\VehicleOnTaskDetailDto.cs" />
+    </ItemGroup>
+
 </Project>

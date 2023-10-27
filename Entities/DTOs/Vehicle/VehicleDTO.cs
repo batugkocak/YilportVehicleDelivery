@@ -1,9 +1,6 @@
-using Core.Entities;
-using Core.Extensions;
+namespace Entities.DTOs;
 
-namespace Entities.Concrete;
-
-public class Vehicle : BaseEntity 
+public class VehicleDTO
 {
     public string? Plate { get; set; }
     public int Type { get; set; }
@@ -17,9 +14,3 @@ public class Vehicle : BaseEntity
     public int Status { get; set; }
     public string? Note { get; set; }
 }
-
-
-
-
-
-

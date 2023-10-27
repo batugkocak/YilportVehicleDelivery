@@ -2,8 +2,9 @@ using Core.Entities;
 
 namespace Entities.DTOs;
 
-public class VehicleDetailDto : IDto
+public class VehicleDetailDTO : IDto
 {
+    public int Id { get; set; }
     public string? Plate { get; set; }
     public string? Type { get; set; }
     public string? FuelType { get; set; }

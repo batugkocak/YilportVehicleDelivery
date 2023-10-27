@@ -29,7 +29,7 @@ public class DriverController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Driver driver)
+    public IActionResult Post(Driver driver)
     {
         var result = _driverService.Add(driver);
         if (result.Success)

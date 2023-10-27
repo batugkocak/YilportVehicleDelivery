@@ -30,7 +30,7 @@ public class DepartmentController : Controller
     }
     
     [HttpPost]
-    public IActionResult Add(Department department)
+    public IActionResult Post(Department department)
     {
         var result = _departmentService.Add(department);
         if (result.Success)

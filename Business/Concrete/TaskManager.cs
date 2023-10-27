@@ -25,7 +25,7 @@ public class TaskManager : ITaskService
 
     public IDataResult<List<TaskDetailDto>> GetAllDetails()
     {
-        return new SuccessDataResult<List<TaskDetailDto>>(_taskDal.GetTaskDetails(), Messages.TaskListed);
+        return new SuccessDataResult<List<TaskDetailDto>>(_taskDal.GetTaskDetails(), Messages.TasksListed);
 
     }
     

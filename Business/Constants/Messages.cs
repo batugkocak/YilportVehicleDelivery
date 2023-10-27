@@ -10,8 +10,10 @@ public static class Messages
     public const string VehicleUpdated = "Araç başarıyla güncellendi";
     public const string VehicleListed= "Araç başarıyla getirildi.";
     public const string VehicleDeleted= "Araç kaydı başarıyla silindi.";
-    
+
     public const string VehicleAlreadyExist = "Bu plakaya ait bir araç zaten var.";
+    public const string VehicleIsOnDuty= "Araç görevde, önce görevi bitirin veya aracı düzenleyin.";
+
     
     //Task
     public const string TaskAdded = "Görev başarıyla eklendi!";
@@ -25,9 +27,12 @@ public static class Messages
     public const string VehicleOnTaskAdded = "Araç görevlendirildi.";
     public const string VehiclesOnTaskListed = "Araç görevleri başarıyla listelendi.";
     public const string VehicleOnTaskUpdated = "Araç görevi güncellendi.";
-    public const string VehicleOnTaskListed = "Araç görevi başarıyla güncellendi.";
+    public const string VehicleOnTaskListed = "Araç başarıyla listelendi.";
     public const string VehicleOnTaskDeleted = "Araç görevi silindi.";
+    public const string VehicleOnTaskTaskFinished = "Araç görevi başarıyla tamamlandı.";
+    public const string VehicleOnTaskTaskDeleted = "Araç görevi başarıyla silindi.";
 
+ 
     
     //Driver
     public const string DriverAdded = "Sürücü başarıyla eklendi";
@@ -49,5 +54,12 @@ public static class Messages
     public const string OwnerListed = "Araç sahibi başarıyla getirildi.";
     public const string OwnerDeleted = "Araç sahibi başarıyla silindi.";
     public const string OwnerUpdated = "Araç sahibi başarıyla güncellendi.";
+    
+    //Departments
+    public const string DepartmentsAdded = "Departman başarıyla eklendi.";
+    public const string DepartmentsListed = "Departmanlar başarıyla listelendi.";
+
+    
+    public const string NotFound = "İstenilen veri(ler) bulunamadı.";
 
 }

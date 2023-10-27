@@ -8,7 +8,11 @@ namespace Business.Abstract;
 public interface IVehicleService
 {
     IDataResult<List<Vehicle>> GetAll();
-    IDataResult<List<VehicleForTableDto>> GetAllDetails();
+    IDataResult<List<VehicleForTableDTO>> GetAllDetailsForTable();
+    
+    IDataResult<VehicleDetailDTO> GetDetailsById(int vehicleId);
+
+    IResult CheckIfCarExistByPlate(String plate);
 
     IDataResult<Vehicle> GetById(int vehicleId);
     IResult Add(Vehicle vehicle);

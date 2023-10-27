@@ -29,6 +29,22 @@ public class VehicleOnTaskController : Controller
         return Ok(result);
     }
     
+    [Route("ForTable")]
+    [HttpGet]
+    public IActionResult GetForTable()
+    {
+        var result = _vehicleOnTaskService.GetAllForTable();
+        return Ok(result);
+    }
+    
+    [Route("Details/{id}")]
+    [HttpGet]
+    public IActionResult GetDetailedById(int id)
+    {
+        var result = _vehicleOnTaskService.GetAllDetailsById(id);
+        return Ok(result);
+    }
+    
     [HttpGet("{vehicleOnTaskId}")]
     public IActionResult Get(int vehicleOnTaskId)
     {
@@ -44,6 +60,45 @@ public class VehicleOnTaskController : Controller
     //     return Ok(result);
     // }
     
+    [Route("Finish/{taskId}")]
+    [HttpPost]
+    public IActionResult FinishTask(int taskId)
+    {
+        var result = _vehicleOnTaskService.FinishTask(taskId);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    
+    [Route("Update")]
+    [HttpPost]
+    public IActionResult Update(VehicleOnTask vehicleOnTask)
+    {
+        var result = _vehicleOnTaskService.Update(vehicleOnTask);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    
+    [Route("Delete/{taskId}")]
+    [HttpPost]
+    public IActionResult DeleteTask(int taskId)
+    {
+        var result = _vehicleOnTaskService.DeleteTask(taskId);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    
     [HttpPost]
     public IActionResult Add(VehicleOnTask vehicleOnTask)
     {
@@ -56,3 +111,17 @@ public class VehicleOnTaskController : Controller
         return BadRequest(result.Message);
     }
 }
+
+/*
+{
+   "id": 68,
+   "vehicleId": 1,
+   "driverId": 1,
+   "departmentId": 1,
+   "authorizedPerson": "string",
+   "address": "Bursa",
+   "taskDefinition": "Bakım",
+   "givenDate": "2023-10-03T11:46:53",
+   "returnDate": "0001-01-01T00:00:00"
+   }
+*/

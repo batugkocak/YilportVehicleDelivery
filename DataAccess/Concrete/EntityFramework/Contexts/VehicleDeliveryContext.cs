@@ -54,9 +54,6 @@ public class VehicleDeliveryContext : DbContext
                 if (track != null) track.Changed = DateTime.Now;
             }
         }
-
-
-        
         return base.SaveChanges();
     }
 }

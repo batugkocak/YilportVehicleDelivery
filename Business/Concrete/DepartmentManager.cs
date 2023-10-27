@@ -16,7 +16,7 @@ public class DepartmentManager : IDepartmentService
     }
     public IDataResult<List<Department>> GetAll()
     {
-        return new SuccessDataResult<List<Department>>(_departmentDal.GetAll().ToList());
+        return new SuccessDataResult<List<Department>>(_departmentDal.GetAll().ToList(), Messages.DepartmentsListed);
     }
 
     public IDataResult<Department> GetById(int departmentId)
