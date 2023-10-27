@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="chore: Update .gitignore">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added global ValidationTool to validate entities with FluentValidation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Business.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +17,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -107,7 +105,7 @@
       <workItem from="1698401614014" duration="28000" />
       <workItem from="1698401650592" duration="15000" />
       <workItem from="1698401674866" duration="20000" />
-      <workItem from="1698401703829" duration="4840000" />
+      <workItem from="1698401703829" duration="5559000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -133,7 +131,47 @@
       <option name="project" value="LOCAL" />
       <updated>1698405743497</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: Added global ValidationTool to validate entities with FluentValidation">
+      <option name="closed" value="true" />
+      <created>1698408698727</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698408698727</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Added global ValidationTool to validate entities with FluentValidation">
+      <option name="closed" value="true" />
+      <created>1698408714898</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698408714898</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Added global ValidationTool to validate entities with FluentValidation">
+      <option name="closed" value="true" />
+      <created>1698408724922</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698408724922</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Added global ValidationTool to validate entities with FluentValidation">
+      <option name="closed" value="true" />
+      <created>1698408732764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698408732764</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: Added global ValidationTool to validate entities with FluentValidation">
+      <option name="closed" value="true" />
+      <created>1698408754450</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698408754450</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +183,8 @@
     <MESSAGE value="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client" />
     <MESSAGE value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
     <MESSAGE value="chore: Update .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Update .gitignore" />
+    <MESSAGE value="feat: Added global ValidationTool to validate entities with FluentValidation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added global ValidationTool to validate entities with FluentValidation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
