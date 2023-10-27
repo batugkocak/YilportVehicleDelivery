@@ -1,9 +1,6 @@
-using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramework;
-
-
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Business.DependencyResolvers.Autofac;
 
 var  MyAllowSpecificOrigins = "_myFrontEnd";
 
@@ -24,27 +21,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IVehicleService, VehicleManager>();
-builder.Services.AddSingleton<IVehicleDal, EfVehicleDal>();
+// builder.Services.AddSingleton<IVehicleService, VehicleManager>();
+// builder.Services.AddSingleton<IVehicleDal, EfVehicleDal>();
+//
+// builder.Services.AddSingleton<IVehicleOnTaskService, VehicleOnTaskManager>();
+// builder.Services.AddSingleton<IVehicleOnTaskDal, EfVehicleOnTaskDal>();
+//
+// builder.Services.AddSingleton<IBrandService, BrandManager>();
+// builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
+//
+// builder.Services.AddSingleton<IDriverService, DriverManager>();
+// builder.Services.AddSingleton<IDriverDal, EfDriverDal>();
+//
+// builder.Services.AddSingleton<ITaskService, TaskManager>();
+// builder.Services.AddSingleton<ITaskDal, EfTaskDal>();
+//
+// builder.Services.AddSingleton<IDepartmentService, DepartmentManager>();
+// builder.Services.AddSingleton<IDepartmentDal, EfDepartmentDal>();
+//
+// builder.Services.AddSingleton<IOwnerService, OwnerManager>();
+// builder.Services.AddSingleton<IOwnerDal, EfOwnerDal>();
 
-builder.Services.AddSingleton<IVehicleOnTaskService, VehicleOnTaskManager>();
-builder.Services.AddSingleton<IVehicleOnTaskDal, EfVehicleOnTaskDal>();
-
-builder.Services.AddSingleton<IBrandService, BrandManager>();
-builder.Services.AddSingleton<IBrandDal, EfBrandDal>();
-
-builder.Services.AddSingleton<IDriverService, DriverManager>();
-builder.Services.AddSingleton<IDriverDal, EfDriverDal>();
-
-builder.Services.AddSingleton<ITaskService, TaskManager>();
-builder.Services.AddSingleton<ITaskDal, EfTaskDal>();
-
-builder.Services.AddSingleton<IDepartmentService, DepartmentManager>();
-builder.Services.AddSingleton<IDepartmentDal, EfDepartmentDal>();
-
-builder.Services.AddSingleton<IOwnerService, OwnerManager>();
-builder.Services.AddSingleton<IOwnerDal, EfOwnerDal>();
-
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory(options =>
+    options.RegisterModule(new AutofacBusinessModule())
+));
 
 var app = builder.Build();
 
