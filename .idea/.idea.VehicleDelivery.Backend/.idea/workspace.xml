@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added Autofac to import services in Business Layer instead of API Layer">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Business.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Core/Entities/BaseEntity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/BrandController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -36,27 +32,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
-      &quot;/Users/batugkocak/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
+      "/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/Users/batugkocak/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: https">
     <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebAPI/WebAPI.csproj" />
@@ -107,7 +104,7 @@
       <workItem from="1698401614014" duration="28000" />
       <workItem from="1698401650592" duration="15000" />
       <workItem from="1698401674866" duration="20000" />
-      <workItem from="1698401703829" duration="1731000" />
+      <workItem from="1698401703829" duration="2109000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -117,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698404209382</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: Added Autofac to import services in Business Layer instead of API Layer">
+      <option name="closed" value="true" />
+      <created>1698405408202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698405408202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client" />
-    <option name="LAST_COMMIT_MESSAGE" value="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client" />
+    <MESSAGE value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
   </component>
 </project>
