@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added Autofac to import services in Business Layer instead of API Layer">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="chore: Update .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Business.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -104,7 +107,7 @@
       <workItem from="1698401614014" duration="28000" />
       <workItem from="1698401650592" duration="15000" />
       <workItem from="1698401674866" duration="20000" />
-      <workItem from="1698401703829" duration="2109000" />
+      <workItem from="1698401703829" duration="4840000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -122,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698405408202</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: Update .gitignore">
+      <option name="closed" value="true" />
+      <created>1698405743497</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698405743497</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +144,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client" />
     <MESSAGE value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added Autofac to import services in Business Layer instead of API Layer" />
+    <MESSAGE value="chore: Update .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Update .gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Core/Utilities/Interceptors/MethodInterceptor.cs</url>
+          <line>8</line>
+          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Interceptors/MethodInterceptor.cs" initialLine="6" containingFunctionPresentation="Method 'OnBefore'">
+            <startOffsets>
+              <option value="220" />
+            </startOffsets>
+            <endOffsets>
+              <option value="221" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

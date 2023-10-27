@@ -1,12 +1,15 @@
-
+using System.ComponentModel.DataAnnotations;
 using Business.Abstract;
 using Business.Constants;
-using Core.Extensions;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
+using ValidationException = FluentValidation.ValidationException;
 
 namespace Business.Concrete;
 
@@ -69,6 +72,8 @@ public class VehicleManager : IVehicleService
     
     public IResult Add(Vehicle vehicle)
     {
+        ValidationTool.Validate(new VehicleValidator(), vehicle);
+        
         var result = BusinessRules.Run(CheckIfCarExistByPlate(vehicle.Plate!));
         if (result != null)
         {
@@ -128,3 +133,4 @@ public class VehicleManager : IVehicleService
         return new SuccessResult();
     }
 }
+
