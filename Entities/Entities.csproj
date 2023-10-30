@@ -16,4 +16,7 @@
       <Compile Remove="DTOs\VehicleOnTaskDetailDto.cs" />
     </ItemGroup>
 
+
+
+
 </Project>

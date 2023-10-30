@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Business.Abstract;
+using Business.Aspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -29,6 +30,7 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
     }
     
+    [SecuredOperation("admin")]
     public IDataResult<List<VehicleForTableDTO>> GetAllDetailsForTable()
     {
         var result = _vehicleDal.GetVehicleDetails();

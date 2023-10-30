@@ -1,4 +1,5 @@
 using Core.Entities;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Task = Entities.Concrete.Task;
@@ -19,6 +20,11 @@ public class VehicleDeliveryContext : DbContext
     public DbSet<Driver> Drivers { get; set; }
     public DbSet<Task> Tasks { get; set; }
     public DbSet<VehicleOnTask> VehiclesOnTask { get; set; }
+    
+    //Auth:
+    public DbSet<OperationClaim> OperationClaims { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
 
     public override int SaveChanges()
     {

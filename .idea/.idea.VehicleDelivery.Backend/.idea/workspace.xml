@@ -4,7 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added ValidationAspect and tested on VehicleManager.Add" />
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Business/Abstract/IAuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/Abstract/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/Aspects/Autofac/SecuredOperation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/Concrete/AuthManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/Concrete/UserManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/OperationClaim.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/UserOperationClaim.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Extensions/ClaimExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Extensions/ClaimsPrincipalExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Encryption/SecurityKeyHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Encryption/SigningCredentialsHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Hashing/HashingHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/AccessToken.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/ITokenHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/TokenOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Abstract/IUserDal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Concrete/EfUserDal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/DTOs/User/UserForLogin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entities/DTOs/User/UserForRegister.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebAPI/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Business.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Entities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +52,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0a588667d4982a931eac28c74bdbfaa7ee5868ed8bc644e4f418acc71f1ee6/JwtRegisteredClaimNames.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/359537e245b0afc067aad75b968d507f7410b245ce987ebf986c2a331683e16/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/529694297a85d68de8e828b331c716e8bac5792dad60b27fdb8ac7157bd1/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -32,28 +74,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
-      "/Users/batugkocak/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/batugkocak/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache&quot;,
+      &quot;/Users/batugkocak/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: https">
     <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebAPI/WebAPI.csproj" />
@@ -105,6 +150,8 @@
       <workItem from="1698401650592" duration="15000" />
       <workItem from="1698401674866" duration="20000" />
       <workItem from="1698401703829" duration="6972000" />
+      <workItem from="1698641999631" duration="12831000" />
+      <workItem from="1698660753098" duration="4391000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -229,6 +276,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
+          <line>50</line>
+          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="50" containingFunctionPresentation="Method 'CreateJwtSecurityToken'">
+            <startOffsets>
+              <option value="1899" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1910" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
+          <line>24</line>
+          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="24" containingFunctionPresentation="Method 'CreateToken'">
+            <startOffsets>
+              <option value="752" />
+            </startOffsets>
+            <endOffsets>
+              <option value="838" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="25" containingFunctionPresentation="Method 'CreateToken'">
+            <startOffsets>
+              <option value="847" />
+            </startOffsets>
+            <endOffsets>
+              <option value="928" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
