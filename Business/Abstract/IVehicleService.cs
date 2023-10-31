@@ -16,6 +16,6 @@ public interface IVehicleService
 
     IDataResult<Vehicle> GetById(int vehicleId);
     IResult Add(Vehicle vehicle);
-    IResult Delete(Vehicle vehicle);
+    IResult Delete(int id);
     IResult Update(Vehicle vehicle);
 }

@@ -93,11 +93,11 @@ public class VehicleController : Controller
 
         return BadRequest(result.Message);
     }
-    [Route("Delete")]
+    [Route("Delete/{vehicleId}")]
     [HttpPost]
-    public IActionResult Delete(Vehicle vehicle)
+    public IActionResult Delete(int vehicleId)
     {
-        var result = _vehicleService.Delete(vehicle);
+        var result = _vehicleService.Delete(vehicleId);
         if (result.Success)
         {
             return Ok(result.Message);

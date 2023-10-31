@@ -9,6 +9,6 @@ public interface IVehicleOnTaskDal : IEntityRepository<VehicleOnTask>
     public List<VehicleOnTaskDetailDto> GetVehicleOnTaskDetail();
     public VehicleOnTaskDetailDto GetVehicleOnTaskDetailById(int id);
 
-    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable();
+    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable(bool isFinished);
 
 }

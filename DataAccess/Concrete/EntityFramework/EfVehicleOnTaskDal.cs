@@ -42,6 +42,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
             join dr in context.Drivers on v.DriverId equals dr.Id
             join vehicle in context.Vehicles on v.VehicleId equals vehicle.Id 
             where v.Id == id 
+            where v.IsDeleted != true
             select new VehicleOnTaskDetailDto{
                 VehicleOnTaskId = v.Id,
                 VehiclePlate = vehicle.Plate,
@@ -59,7 +60,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
         return result;
     }
 
-    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable()
+    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable(bool isFinished)
     {
         using VehicleDeliveryContext context = new VehicleDeliveryContext();
         var result = (from vot in context.VehiclesOnTask
@@ -67,6 +68,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
             join d in context.Departments on vot.DepartmentId equals d.Id
             join department in context.Departments on vot.DepartmentId equals department.Id 
             where vot.IsDeleted != true
+            where vot.IsFinished == isFinished
             select new VehicleOnTaskForTableDto()
             {
                 Id = vot.Id ,

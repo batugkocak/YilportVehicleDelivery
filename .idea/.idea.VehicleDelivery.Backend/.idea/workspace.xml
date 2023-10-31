@@ -5,43 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Business/Abstract/IAuthService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/Abstract/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/Aspects/Autofac/SecuredOperation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/Concrete/AuthManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/Concrete/UserManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/OperationClaim.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Entities/Concrete/UserOperationClaim.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Extensions/ClaimExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Extensions/ClaimsPrincipalExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Encryption/SecurityKeyHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Encryption/SigningCredentialsHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Hashing/HashingHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/AccessToken.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/ITokenHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/TokenOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Abstract/IUserDal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Concrete/EfUserDal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/DTOs/User/UserForLogin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Entities/DTOs/User/UserForRegister.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Business.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IVehicleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IVehicleService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Entities.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/WebAPI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EfUserDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfUserDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Concrete/VehicleOnTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Concrete/VehicleOnTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/VehicleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/VehicleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +38,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -151,7 +126,10 @@
       <workItem from="1698401674866" duration="20000" />
       <workItem from="1698401703829" duration="6972000" />
       <workItem from="1698641999631" duration="12831000" />
-      <workItem from="1698660753098" duration="4391000" />
+      <workItem from="1698660753098" duration="7331000" />
+      <workItem from="1698729273674" duration="54000" />
+      <workItem from="1698729340209" duration="173000" />
+      <workItem from="1698731334283" duration="9265000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -233,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698409744274</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: Added JWT&#10;Added login and register funcitonality,">
+      <option name="closed" value="true" />
+      <created>1698669081603</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1698669081603</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,64 +245,7 @@
     <MESSAGE value="feat: Added global ValidationTool to validate entities with FluentValidation" />
     <MESSAGE value="feat: Added base AOP classes" />
     <MESSAGE value="feat: Added ValidationAspect and tested on VehicleManager.Add" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added ValidationAspect and tested on VehicleManager.Add" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Utilities/Interceptors/MethodInterceptor.cs</url>
-          <line>8</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Interceptors/MethodInterceptor.cs" initialLine="6" containingFunctionPresentation="Method 'OnBefore'">
-            <startOffsets>
-              <option value="220" />
-            </startOffsets>
-            <endOffsets>
-              <option value="221" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
-          <line>50</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="50" containingFunctionPresentation="Method 'CreateJwtSecurityToken'">
-            <startOffsets>
-              <option value="1899" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1910" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
-          <line>24</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="24" containingFunctionPresentation="Method 'CreateToken'">
-            <startOffsets>
-              <option value="752" />
-            </startOffsets>
-            <endOffsets>
-              <option value="838" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs</url>
-          <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Utilities/Security/Jwt/JwtHelper.cs" initialLine="25" containingFunctionPresentation="Method 'CreateToken'">
-            <startOffsets>
-              <option value="847" />
-            </startOffsets>
-            <endOffsets>
-              <option value="928" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: Added JWT&#10;Added login and register funcitonality," />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added JWT&#10;Added login and register funcitonality," />
   </component>
 </project>

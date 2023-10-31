@@ -36,9 +36,9 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
 
     }
 
-    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable()
+    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable(bool isFinished)
     {
-        return new SuccessDataResult<List<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTable(),
+        return new SuccessDataResult<List<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTable(isFinished),
             Messages.VehiclesOnTaskListed);
     }
 
@@ -85,11 +85,8 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);
         vehicleTask.ReturnDate = DateTime.Now;
-        
-         var updatedVehicle =  _vehicleService.GetById(vehicleTask.VehicleId).Data;
-         updatedVehicle.Status = (int) VehicleStatus.Müsait;
-         _vehicleService.Update(updatedVehicle);
-        
+        vehicleTask.IsFinished = true;
+        MakeCarAvailable(vehicleTask);
         
         _vehicleOnTaskDal.Update(vehicleTask);
         return new SuccessResult(Messages.VehicleOnTaskTaskFinished);
@@ -98,7 +95,9 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     public IResult DeleteTask(int taskId)
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);
-         vehicleTask.IsDeleted = true; //TODO: This might be isFinished or etc.
+         vehicleTask.IsDeleted = true; 
+         
+        MakeCarAvailable(vehicleTask);
          
         _vehicleOnTaskDal.Update(vehicleTask);
         return new SuccessResult(Messages.VehicleOnTaskTaskDeleted);
@@ -113,5 +112,12 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         }
 
         return new SuccessResult();
+    }
+
+    private void MakeCarAvailable(VehicleOnTask vehicleOnTask)
+    {
+        var updatedVehicle =  _vehicleService.GetById(vehicleOnTask.VehicleId).Data;
+        updatedVehicle.Status = (int) VehicleStatus.Müsait;
+        _vehicleService.Update(updatedVehicle);
     }
 }

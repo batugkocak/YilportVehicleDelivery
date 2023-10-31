@@ -45,6 +45,7 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
             join b in dtoContext.Brands on v.BrandId equals b.Id
             join o in dtoContext.Owners on v.OwnerId equals o.Id
             where v.IsDeleted != true
+            orderby v.Created
             select new VehicleForTableDTO()
             {
                 Id = v.Id,

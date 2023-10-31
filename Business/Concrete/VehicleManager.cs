@@ -30,7 +30,7 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
     }
     
-    [SecuredOperation("admin")]
+    //[SecuredOperation("admin")]
     public IDataResult<List<VehicleForTableDTO>> GetAllDetailsForTable()
     {
         var result = _vehicleDal.GetVehicleDetails();
@@ -88,15 +88,15 @@ public class VehicleManager : IVehicleService
         return new SuccessResult(Messages.VehicleAdded);
     }
 
-    public IResult Delete(Vehicle vehicle)
+    public IResult Delete(int id)
     {
-        var result = BusinessRules.Run(CheckIfCarIsOnDuty(vehicle.Id));
+        var result = BusinessRules.Run(CheckIfCarIsOnDuty(id));
         if (result != null)
         {
             return result;
         }
 
-        var deletedCar= _vehicleDal.Get(v=> v.Id == vehicle.Id);
+        var deletedCar= _vehicleDal.Get(v=> v.Id == id);
         deletedCar.IsDeleted = true;
         _vehicleDal.Update(deletedCar);
         return new SuccessResult(Messages.VehicleDeleted);

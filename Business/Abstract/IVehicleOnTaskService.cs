@@ -21,6 +21,6 @@ public interface IVehicleOnTaskService
     public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails();
 
     public IDataResult<VehicleOnTaskDetailDto> GetAllDetailsById(int id);
-    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable();
+    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable(bool isFinished);
 
 }

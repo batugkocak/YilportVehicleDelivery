@@ -29,11 +29,19 @@ public class VehicleOnTaskController : Controller
         return Ok(result);
     }
     
-    [Route("ForTable")]
+    [Route("ForNormalTable")]
     [HttpGet]
-    public IActionResult GetForTable()
+    public IActionResult GetForNormalTable()
     {
-        var result = _vehicleOnTaskService.GetAllForTable();
+        var result = _vehicleOnTaskService.GetAllForTable(false);
+        return Ok(result);
+    }
+    
+    [Route("ForArchiveTable")]
+    [HttpGet]
+    public IActionResult GetForArchiveTable()
+    {
+        var result = _vehicleOnTaskService.GetAllForTable(true);
         return Ok(result);
     }
     
