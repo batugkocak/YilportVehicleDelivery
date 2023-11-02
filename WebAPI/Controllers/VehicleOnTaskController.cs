@@ -1,4 +1,5 @@
 using Business.Abstract;
+using DataAccess.FilterQueryObjects.VehicleOnTask;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,18 +32,28 @@ public class VehicleOnTaskController : Controller
     
     [Route("ForNormalTable")]
     [HttpGet]
-    public IActionResult GetForNormalTable()
+    public IActionResult GetForNormalTable([FromQuery]VotFilterRequest filterRequest)
     {
-        var result = _vehicleOnTaskService.GetAllForTable(false);
+        
+        var result = _vehicleOnTaskService.GetAllForTable();
         return Ok(result);
     }
     
     [Route("ForArchiveTable")]
     [HttpGet]
-    public IActionResult GetForArchiveTable()
+    public IActionResult GetForArchiveTable([FromQuery]VotFilterRequest filterRequest)
     {
-        var result = _vehicleOnTaskService.GetAllForTable(true);
-        return Ok(result);
+        var result = _vehicleOnTaskService.GetAllForArchiveTable(filterRequest);
+
+        return Ok(
+        new
+        {
+            result.Data,
+            result.Message,
+            result.Success,
+
+        }
+        );
     }
     
     [Route("Details/{id}")]
@@ -118,6 +129,7 @@ public class VehicleOnTaskController : Controller
 
         return BadRequest(result.Message);
     }
+    
 }
 
 /*

@@ -1,4 +1,6 @@
+using Core.Extensions;
 using Core.Utilities.Results;
+using DataAccess.FilterQueryObjects.VehicleOnTask;
 using Entities.Concrete;
 using Entities.DTOs;
 
@@ -21,6 +23,7 @@ public interface IVehicleOnTaskService
     public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails();
 
     public IDataResult<VehicleOnTaskDetailDto> GetAllDetailsById(int id);
-    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable(bool isFinished);
+    public IDataResult<PagingResponse<VehicleOnTaskForTableDto>> GetAllForArchiveTable(VotFilterRequest filterRequest);
+    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable( );
 
 }

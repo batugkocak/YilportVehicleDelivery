@@ -1,4 +1,6 @@
 using Core.DataAccess;
+using Core.Extensions;
+using DataAccess.FilterQueryObjects.VehicleOnTask;
 using Entities.Concrete;
 using Entities.DTOs;
 
@@ -8,7 +10,8 @@ public interface IVehicleOnTaskDal : IEntityRepository<VehicleOnTask>
 {
     public List<VehicleOnTaskDetailDto> GetVehicleOnTaskDetail();
     public VehicleOnTaskDetailDto GetVehicleOnTaskDetailById(int id);
+    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable();
 
-    public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable(bool isFinished);
+    public PagingResponse<VehicleOnTaskForTableDto> GetVehicleOnTaskForTableFinished(VotFilterRequest filterRequest);
 
 }

@@ -7,15 +7,9 @@
     <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IVehicleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IVehicleService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EfUserDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfUserDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Concrete/VehicleOnTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Concrete/VehicleOnTask.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/VehicleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/VehicleController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +25,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/34ff4a0f713e2bf2792a68c17f16e627d9162c3133b95be749eb257ac4f778/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/359537e245b0afc067aad75b968d507f7410b245ce987ebf986c2a331683e16/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/529694297a85d68de8e828b331c716e8bac5792dad60b27fdb8ac7157bd1/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5d46f35cc10c0f21348d324d6965a48709c61fa67dfdcfa0254ce8cdbbb8/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
@@ -129,7 +124,8 @@
       <workItem from="1698660753098" duration="7331000" />
       <workItem from="1698729273674" duration="54000" />
       <workItem from="1698729340209" duration="173000" />
-      <workItem from="1698731334283" duration="9265000" />
+      <workItem from="1698731334283" duration="10719000" />
+      <workItem from="1698900928217" duration="13852000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -219,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698669081603</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: Added functionality to get finished and nonfinished  VehiclesOnTask">
+      <option name="closed" value="true" />
+      <created>1698755421208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698755421208</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +250,26 @@
     <MESSAGE value="feat: Added base AOP classes" />
     <MESSAGE value="feat: Added ValidationAspect and tested on VehicleManager.Add" />
     <MESSAGE value="feat: Added JWT&#10;Added login and register funcitonality," />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added JWT&#10;Added login and register funcitonality," />
+    <MESSAGE value="feat: Added functionality to get finished and nonfinished  VehiclesOnTask" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added functionality to get finished and nonfinished  VehiclesOnTask" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs</url>
+          <line>111</line>
+          <properties documentPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" initialLine="90" containingFunctionPresentation="Method 'GetVehicleOnTaskForTable'">
+            <startOffsets>
+              <option value="4684" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4685" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

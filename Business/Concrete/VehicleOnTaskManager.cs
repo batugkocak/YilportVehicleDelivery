@@ -1,9 +1,11 @@
 using System.Linq.Expressions;
 using Business.Abstract;
 using Business.Constants;
+using Core.Extensions;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.FilterQueryObjects.VehicleOnTask;
 using Entities.Concrete;
 using Entities.DTOs;
 
@@ -36,9 +38,16 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
 
     }
 
-    public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable(bool isFinished)
+    
+
+    public IDataResult<PagingResponse<VehicleOnTaskForTableDto>> GetAllForArchiveTable(VotFilterRequest filterRequest)
     {
-        return new SuccessDataResult<List<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTable(isFinished),
+        return new SuccessDataResult<PagingResponse<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest),
+            Messages.VehiclesOnTaskListed);
+    }
+     public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable()
+    {
+        return new SuccessDataResult<List<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTable(),
             Messages.VehiclesOnTaskListed);
     }
 
