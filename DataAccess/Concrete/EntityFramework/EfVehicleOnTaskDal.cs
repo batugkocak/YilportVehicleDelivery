@@ -21,7 +21,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
                 where v.IsFinished == true
                 where filterRequest.FirstGivenDate <= v.GivenDate
                 where filterRequest.LastGivenDate >= v.GivenDate
-                orderby v.GivenDate
+                orderby v.GivenDate descending 
                 select new VehicleOnTaskDetailDto{
                     VehicleOnTaskId = v.Id,
                     VehiclePlate = vehicle.Plate,
@@ -80,7 +80,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
                 TaskDefinition = vot.TaskDefinition,
                 GivenDate = vot.GivenDate,
                 ReturnDate = vot.ReturnDate,
-            }).ToList();
+            }).OrderByDescending(vot => vot.GivenDate).ToList();
         return result;
     }
 
@@ -96,7 +96,6 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
             where vot.IsFinished == true
             where filterRequest.FirstGivenDate <= vot.GivenDate
             where filterRequest.LastGivenDate >= vot.GivenDate
-            orderby vot.GivenDate
             select new VehicleOnTaskForTableDto()
             {
                 Id = vot.Id,
@@ -106,7 +105,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
                 TaskDefinition = vot.TaskDefinition,
                 GivenDate = vot.GivenDate,
                 ReturnDate = vot.ReturnDate,
-            }).OrderBy(vot => vot.ReturnDate).ToPaginate(new ()
+            }).OrderByDescending(vot => vot.ReturnDate).ToPaginate(new ()
         {
             PageSize = filterRequest.Size,
             PageIndex = filterRequest.Page

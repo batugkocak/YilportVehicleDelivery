@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="chore: some code improvements">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IVehicleOnTaskService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IVehicleOnTaskDal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/VehicleOnTaskController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +25,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IVehicleOnTaskService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/IVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/VehicleOnTaskController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -133,7 +130,7 @@
       <workItem from="1698729340209" duration="173000" />
       <workItem from="1698731334283" duration="10719000" />
       <workItem from="1698900928217" duration="19618000" />
-      <workItem from="1698988652753" duration="2947000" />
+      <workItem from="1698988652753" duration="4717000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -239,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698926362299</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: Added Detailed VoT functions for excel export">
+      <option name="closed" value="true" />
+      <created>1698992248065</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698992248065</updated>
+    </task>
+    <task id="LOCAL-00015" summary="chore: some code improvements">
+      <option name="closed" value="true" />
+      <created>1698994337772</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698994337772</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,26 +281,11 @@
     <MESSAGE value="feat: Added JWT&#10;Added login and register funcitonality," />
     <MESSAGE value="feat: Added functionality to get finished and nonfinished  VehiclesOnTask" />
     <MESSAGE value="feat: Pagination added for VehicleOnTask" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Pagination added for VehicleOnTask" />
+    <MESSAGE value="feat: Added Detailed VoT functions for excel export" />
+    <MESSAGE value="chore: some code improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: some code improvements" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Extensions/PaginationExtension.cs</url>
-          <line>9</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Extensions/PaginationExtension.cs" initialLine="9" containingFunctionPresentation="Method 'ToPaginate'">
-            <startOffsets>
-              <option value="268" />
-            </startOffsets>
-            <endOffsets>
-              <option value="371" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Core.Extensions.PagingResponse`1" memberName="Items" />

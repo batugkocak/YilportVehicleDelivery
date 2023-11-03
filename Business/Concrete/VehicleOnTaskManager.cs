@@ -120,7 +120,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     
     private IResult CheckIfVehicleOnDutyById(int vehicleId)
     {
-        var result = _vehicleOnTaskDal.GetAll(v=>v.VehicleId == vehicleId && v.ReturnDate == DateTime.Parse("1.01.0001 00:00:00")).Any();
+        var result = _vehicleOnTaskDal.GetAll(v=>v.VehicleId == vehicleId && v.IsFinished != true).Any();
         if (result)
         {
             return new ErrorResult(Messages.VehicleAlreadyOnTask);
