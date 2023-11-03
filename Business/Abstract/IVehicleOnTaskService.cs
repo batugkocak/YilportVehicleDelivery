@@ -20,7 +20,7 @@ public interface IVehicleOnTaskService
 
     
     public IResult FinishTask(int vehicleOnTaskId);
-    public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails();
+    public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails(VotFilterRequest filterRequest);
 
     public IDataResult<VehicleOnTaskDetailDto> GetAllDetailsById(int id);
     public IDataResult<PagingResponse<VehicleOnTaskForTableDto>> GetAllForArchiveTable(VotFilterRequest filterRequest);

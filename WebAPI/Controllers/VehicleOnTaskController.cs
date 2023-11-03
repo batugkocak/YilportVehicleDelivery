@@ -22,13 +22,7 @@ public class VehicleOnTaskController : Controller
         var result = _vehicleOnTaskService.GetAll();
         return Ok(result);
     }
-    [Route("Details")]
-    [HttpGet]
-    public IActionResult GetDetailed()
-    {
-        var result = _vehicleOnTaskService.GetAllDetails();
-        return Ok(result);
-    }
+    
     
     [Route("ForNormalTable")]
     [HttpGet]
@@ -36,6 +30,13 @@ public class VehicleOnTaskController : Controller
     {
         
         var result = _vehicleOnTaskService.GetAllForTable();
+        return Ok(result);
+    }
+    [Route("Details")]
+    [HttpGet]
+    public IActionResult GetDetailed([FromQuery]VotFilterRequest filterRequest)
+    {
+        var result = _vehicleOnTaskService.GetAllDetails(filterRequest);
         return Ok(result);
     }
     

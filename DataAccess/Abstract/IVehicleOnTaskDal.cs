@@ -8,7 +8,7 @@ namespace DataAccess.Abstract;
 
 public interface IVehicleOnTaskDal : IEntityRepository<VehicleOnTask>
 {
-    public List<VehicleOnTaskDetailDto> GetVehicleOnTaskDetail();
+    public List<VehicleOnTaskDetailDto> GetVehicleOnTaskDetailFinished(VotFilterRequest filterRequest);
     public VehicleOnTaskDetailDto GetVehicleOnTaskDetailById(int id);
     public List<VehicleOnTaskForTableDto> GetVehicleOnTaskForTable();
 

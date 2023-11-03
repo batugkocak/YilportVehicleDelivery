@@ -27,9 +27,12 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         return new SuccessDataResult<List<VehicleOnTask>>(_vehicleOnTaskDal.GetAll(vot => vot.IsDeleted != true), Messages.VehiclesOnTaskListed);
     }
     
-    public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails()
+    public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails(VotFilterRequest filterRequest)
     {
-        return new SuccessDataResult<List<VehicleOnTaskDetailDto>>(_vehicleOnTaskDal.GetVehicleOnTaskDetail(), Messages.VehiclesOnTaskListed);
+        if (filterRequest.FirstGivenDate == null) filterRequest.FirstGivenDate = DateTime.MinValue;
+        if (filterRequest.LastGivenDate == null) filterRequest.LastGivenDate = DateTime.Now;
+        if (filterRequest.Size == -1) filterRequest.Size = int.MaxValue;
+        return new SuccessDataResult<List<VehicleOnTaskDetailDto>>(_vehicleOnTaskDal.GetVehicleOnTaskDetailFinished(filterRequest), Messages.VehiclesOnTaskListed);
     }
 
     public IDataResult<VehicleOnTaskDetailDto> GetAllDetailsById(int id)
@@ -42,6 +45,9 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
 
     public IDataResult<PagingResponse<VehicleOnTaskForTableDto>> GetAllForArchiveTable(VotFilterRequest filterRequest)
     {
+        if (filterRequest.FirstGivenDate == null) filterRequest.FirstGivenDate = DateTime.MinValue;
+        if (filterRequest.LastGivenDate == null) filterRequest.LastGivenDate = DateTime.Now;
+        if (filterRequest.Size == -1) filterRequest.Size = int.MaxValue;
         return new SuccessDataResult<PagingResponse<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest),
             Messages.VehiclesOnTaskListed);
     }
