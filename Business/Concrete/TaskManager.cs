@@ -20,7 +20,7 @@ public class TaskManager : ITaskService
 
     public IDataResult<List<Task>> GetAll()
     {
-        return new SuccessDataResult<List<Task>>(_taskDal.GetAll(), Messages.TaskListed);
+        return new SuccessDataResult<List<Task>>(_taskDal.GetAll(), Messages.TasksListed);
     }
 
     public IDataResult<List<TaskDetailDto>> GetAllDetails()

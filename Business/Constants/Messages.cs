@@ -27,7 +27,7 @@ public static class Messages
     public const string VehicleOnTaskAdded = "Araç görevlendirildi.";
     public const string VehiclesOnTaskListed = "Araç görevleri başarıyla listelendi.";
     public const string VehicleOnTaskUpdated = "Araç görevi güncellendi.";
-    public const string VehicleOnTaskListed = "Araç başarıyla listelendi.";
+    public const string VehicleOnTaskListed = "Araç görev detayı getirildi.";
     public const string VehicleOnTaskDeleted = "Araç görevi silindi.";
     public const string VehicleOnTaskTaskFinished = "Araç görevi başarıyla tamamlandı.";
     public const string VehicleOnTaskTaskDeleted = "Araç görevi başarıyla silindi.";

@@ -37,7 +37,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
 
     public IDataResult<VehicleOnTaskDetailDto> GetAllDetailsById(int id)
     {
-        return new SuccessDataResult<VehicleOnTaskDetailDto>(_vehicleOnTaskDal.GetVehicleOnTaskDetailById(id), Messages.VehiclesOnTaskListed);
+        return new SuccessDataResult<VehicleOnTaskDetailDto>(_vehicleOnTaskDal.GetVehicleOnTaskDetailById(id), Messages.VehicleOnTaskListed);
 
     }
 
@@ -110,7 +110,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     public IResult DeleteTask(int taskId)
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);
-         vehicleTask.IsDeleted = true; 
+         vehicleTask.IsDeleted = true;
          
         MakeCarAvailable(vehicleTask);
          
@@ -120,7 +120,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     
     private IResult CheckIfVehicleOnDutyById(int vehicleId)
     {
-        var result = _vehicleOnTaskDal.GetAll(v=>v.VehicleId == vehicleId && v.IsFinished != true).Any();
+        var result = _vehicleOnTaskDal.GetAll(v=>v.VehicleId == vehicleId && v.IsFinished != true && v.IsDeleted != true).Any();
         if (result)
         {
             return new ErrorResult(Messages.VehicleAlreadyOnTask);
