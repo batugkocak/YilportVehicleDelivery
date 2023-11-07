@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using Entities.DTOs.Driver;
 
 namespace Business.Concrete;
@@ -47,5 +48,10 @@ public class DriverManager: IDriverService
     {
         return new SuccessDataResult<List<DriverDto>>(_driverDal.GetDriverDetails(), Messages.DriversListed);
 
+    }
+
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_driverDal.GetDriversForSelectBox(), Messages.DriversListed);
     }
 }

@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using Entities.DTOs.Driver;
 
 namespace Business.Abstract;
@@ -13,4 +14,6 @@ public interface IDriverService
     IResult Update(Driver driver);
     
     IDataResult<List<DriverDto>> GetAllDetails();
+
+    IDataResult<List<SelectBoxDto>> GetForSelectBox();
 }

@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete;
 
@@ -41,5 +42,11 @@ public class OwnerManager: IOwnerService
     {
         _ownerDal.Update(owner);
         return new SuccessResult(Messages.OwnerUpdated);
+    }
+
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_ownerDal.GetOwnersForSelectBox(), Messages.OwnersListed);
+
     }
 }

@@ -29,6 +29,14 @@ public class DriverController : Controller
         var result = _driverService.GetAllDetails();
         return Ok(result);
     }
+     
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _driverService.GetForSelectBox();
+        return Ok(result);
+    }
     
     [HttpGet("{driverId}")]
     public IActionResult Get(int driverId)

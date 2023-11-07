@@ -32,6 +32,13 @@ public class VehicleController : Controller
         return Ok(result);
     }
     
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _vehicleService.GetForSelectBox();
+        return Ok(result);
+    }
     
     [Route("{vehicleId}/Details")]
     [HttpGet]

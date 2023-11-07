@@ -117,6 +117,12 @@ public class VehicleManager : IVehicleService
         return new SuccessResult(Messages.VehicleUpdated);
     }
 
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_vehicleDal.GetVehiclesForSelectBox(), Messages.VehiclesListed);
+
+    }
+
     public IResult CheckIfCarExistByPlate(String plate)
     {
         var result = _vehicleDal.GetAll(u => u.Plate == plate).Any();

@@ -8,5 +8,6 @@ public interface IVehicleDal : IEntityRepository<Vehicle>
 {
     public List<VehicleForTableDTO> GetVehicleDetails();
     public VehicleDetailDTO GetVehicleDetailsById(int vehicleId);
+    public List<SelectBoxDto> GetVehiclesForSelectBox();
 
 }

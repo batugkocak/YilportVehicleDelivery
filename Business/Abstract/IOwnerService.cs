@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract;
 
@@ -10,5 +11,6 @@ public interface IOwnerService
     IResult Add(Owner brand);
     IResult Delete(Owner brand);
     IResult Update(Owner brand);
+    IDataResult<List<SelectBoxDto>> GetForSelectBox();
     
 }

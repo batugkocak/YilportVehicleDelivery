@@ -21,6 +21,13 @@ public class DepartmentController : Controller
         var result = _departmentService.GetAll();
         return Ok(result);
     }
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _departmentService.GetForSelectBox();
+        return Ok(result);
+    }
     
     [HttpGet("{departmentId}")]
     public IActionResult Get(int departmentId)

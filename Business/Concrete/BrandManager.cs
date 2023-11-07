@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete;
 
@@ -40,5 +41,12 @@ public class BrandManager : IBrandService
     {
         _brandDal.Update(brand);
         return new SuccessResult(Messages.BrandUpdated);
+    }
+
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_brandDal.GetBrandsForSelectBox(), Messages.BrandsListed);
+
+
     }
 }

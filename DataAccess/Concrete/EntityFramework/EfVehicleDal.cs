@@ -37,6 +37,21 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
         return result;
     }
 
+    public List<SelectBoxDto> GetVehiclesForSelectBox()
+    {
+        using VehicleDeliveryContext context = new();
+        var result =  (from vehicle in context.Vehicles 
+            where vehicle.IsDeleted != true
+            where vehicle.Status != (int) VehicleStatus.Görevde
+            select new SelectBoxDto()
+            {
+                Id = vehicle.Id,
+                SelectBoxValue = vehicle.Plate,
+            }).ToList();
+
+        return result;
+    }
+
     List<VehicleForTableDTO> IVehicleDal.GetVehicleDetails()
     {
         using VehicleDeliveryContext dtoContext = new VehicleDeliveryContext();

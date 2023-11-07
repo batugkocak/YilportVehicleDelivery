@@ -11,4 +11,5 @@ public interface IBrandService
     IResult Add(Brand brand);
     IResult Delete(Brand brand);
     IResult Update(Brand brand);
+    IDataResult<List<SelectBoxDto>> GetForSelectBox();
 }

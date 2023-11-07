@@ -22,6 +22,14 @@ public class BrandController : Controller
         return Ok(result);
     }
     
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _brandService.GetForSelectBox();
+        return Ok(result);
+    }
+    
     [HttpGet("{brandId}")]
     public IActionResult Get(int brandId)
     {

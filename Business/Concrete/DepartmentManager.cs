@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete;
 
@@ -16,7 +17,7 @@ public class DepartmentManager : IDepartmentService
     }
     public IDataResult<List<Department>> GetAll()
     {
-        return new SuccessDataResult<List<Department>>(_departmentDal.GetAll().ToList(), Messages.DepartmentsListed);
+        return new SuccessDataResult<List<Department>>(_departmentDal.GetAll(), Messages.DepartmentsListed);
     }
 
     public IDataResult<Department> GetById(int departmentId)
@@ -40,5 +41,11 @@ public class DepartmentManager : IDepartmentService
     {
         _departmentDal.Update(department);
         return new SuccessResult();
+    }
+
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_departmentDal.GetDepartmentsForSelectBox(), Messages.DepartmentsListed);
+
     }
 }

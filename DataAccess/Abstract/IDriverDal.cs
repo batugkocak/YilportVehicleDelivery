@@ -1,5 +1,6 @@
 using Core.DataAccess;
 using Entities.Concrete;
+using Entities.DTOs;
 using Entities.DTOs.Driver;
 
 namespace DataAccess.Abstract;
@@ -7,4 +8,6 @@ namespace DataAccess.Abstract;
 public interface IDriverDal: IEntityRepository<Driver>
 {
     public List<DriverDto> GetDriverDetails();
+
+    public List<SelectBoxDto> GetDriversForSelectBox();
 }

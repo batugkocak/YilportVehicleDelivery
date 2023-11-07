@@ -2,6 +2,7 @@ using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
+using Entities.DTOs;
 using Entities.DTOs.Driver;
 
 namespace DataAccess.Concrete.EntityFramework;
@@ -13,6 +14,7 @@ public class EfDriverDal: EfEntityRepositoryBase<Driver, VehicleDeliveryContext>
             using VehicleDeliveryContext context = new VehicleDeliveryContext();
             var result = (from driver in context.Drivers 
                 join department in context.Departments on driver.DepartmentId equals department.Id
+                
                 select new DriverDto()
                 {
                     Name = driver.Name,
@@ -24,5 +26,18 @@ public class EfDriverDal: EfEntityRepositoryBase<Driver, VehicleDeliveryContext>
                 }).ToList();
 
             return result;
+    }
+
+    public List<SelectBoxDto> GetDriversForSelectBox()
+    { using VehicleDeliveryContext context = new();
+       var result =  (from driver in context.Drivers
+           where driver.IsDeleted != true
+            select new SelectBoxDto()
+            {
+                Id = driver.Id,
+                SelectBoxValue = $"{driver.Name} {driver.Surname} - {driver.Mission}",
+            }).ToList();
+
+       return result;
     }
 }

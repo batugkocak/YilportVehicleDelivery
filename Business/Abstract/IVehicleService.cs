@@ -18,4 +18,5 @@ public interface IVehicleService
     IResult Add(Vehicle vehicle);
     IResult Delete(int id);
     IResult Update(Vehicle vehicle);
+    IDataResult<List<SelectBoxDto>> GetForSelectBox();
 }

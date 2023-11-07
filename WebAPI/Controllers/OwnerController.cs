@@ -22,6 +22,13 @@ public class OwnerController : Controller
         var result = _ownerService.GetAll();
         return Ok(result);
     }
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _ownerService.GetForSelectBox();
+        return Ok(result);
+    }
     
     [HttpGet("{ownerId}")]
     public IActionResult Get(int ownerId)
