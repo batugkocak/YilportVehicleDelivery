@@ -1,8 +1,7 @@
 using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Contexts;
-using Entities.Concrete;
-using Entities.DTOs;
+using Entities.DTOs.Task;
 using Task = Entities.Concrete.Task;
 
 namespace DataAccess.Concrete.EntityFramework;

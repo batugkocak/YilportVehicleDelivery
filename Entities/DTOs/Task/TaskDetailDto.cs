@@ -1,6 +1,6 @@
 using Core.Entities;
 
-namespace Entities.DTOs;
+namespace Entities.DTOs.Task;
 
 public class TaskDetailDto : IDto
 {

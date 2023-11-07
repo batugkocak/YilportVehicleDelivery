@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs.Driver;
 
 namespace Business.Concrete;
 
@@ -40,5 +41,11 @@ public class DriverManager: IDriverService
     {
         _driverDal.Update(driver);
         return new SuccessResult(Messages.DriverUpdated);
+    }
+
+    public IDataResult<List<DriverDto>> GetAllDetails()
+    {
+        return new SuccessDataResult<List<DriverDto>>(_driverDal.GetDriverDetails(), Messages.DriversListed);
+
     }
 }

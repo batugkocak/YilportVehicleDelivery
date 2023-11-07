@@ -15,9 +15,18 @@ public class DriverController : Controller
     }
     
     [HttpGet]
+    [Route("Details")]
     public IActionResult Get()
     {
-        var result = _driverService.GetAll();
+        var result = _driverService.GetAllDetails();
+        return Ok(result);
+    }
+    
+    
+    [HttpGet]
+    public IActionResult GetDetails()
+    {
+        var result = _driverService.GetAllDetails();
         return Ok(result);
     }
     

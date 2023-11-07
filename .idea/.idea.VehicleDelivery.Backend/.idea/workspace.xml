@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Entities/DTOs/Driver/DriverDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IDriverService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IOwnerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IOwnerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/ITaskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/ITaskService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/DriverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/DriverManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Concrete/TaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/TaskManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IDriverDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IDriverDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/ITaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/ITaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfDriverDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfDriverDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Concrete/Owner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Concrete/Owner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DTOs/TaskDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/Task/TaskDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DTOs/VehicleOnTask/VehicleOnTaskDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/VehicleOnTask/VehicleOnTaskDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/DriverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/DriverController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +38,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/529694297a85d68de8e828b331c716e8bac5792dad60b27fdb8ac7157bd1/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5d46f35cc10c0f21348d324d6965a48709c61fa67dfdcfa0254ce8cdbbb8/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IVehicleOnTaskService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/TaskManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/IVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/VehicleOnTaskController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -53,6 +60,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DataGrid.QuickDoc.View&quot;: &quot;REGULAR&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -134,7 +142,8 @@
       <workItem from="1698731334283" duration="10719000" />
       <workItem from="1698900928217" duration="19618000" />
       <workItem from="1698988652753" duration="14889000" />
-      <workItem from="1699247527535" duration="8601000" />
+      <workItem from="1699247527535" duration="17079000" />
+      <workItem from="1699334529354" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -264,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698994519015</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="chore: Minimal message changes">
+      <option name="closed" value="true" />
+      <created>1699268673244</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699268673244</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +312,8 @@
     <MESSAGE value="feat: Pagination added for VehicleOnTask" />
     <MESSAGE value="feat: Added Detailed VoT functions for excel export" />
     <MESSAGE value="chore: some code improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: some code improvements" />
+    <MESSAGE value="chore: Minimal message changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Minimal message changes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

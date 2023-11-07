@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs.Driver;
 
 namespace Business.Abstract;
 
@@ -10,4 +11,6 @@ public interface IDriverService
     IResult Add(Driver driver);
     IResult Delete(Driver driver);
     IResult Update(Driver driver);
+    
+    IDataResult<List<DriverDto>> GetAllDetails();
 }
