@@ -24,12 +24,12 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
                 Plate = v.Plate,
                 Type  = v.Type.IntToString<VehicleType>(),
                 FuelType = v.FuelType.IntToString<FuelType>(),
-                Owner  = o.Name + " " + o.Surname, //Owner Table
-                Brand = b.Name, // Brand Table
+                Brand = b.Name, 
+                Owner = o.Name,
                 ModelName = v.ModelName,
                 ModelYear = v.ModelYear,
                 Color = v.Color.IntToString<VehicleColor>(),
-                Department = d.Name, // Departmant Table
+                Department = d.Name, 
                 Status =  v.Status.IntToString<VehicleStatus>(),
                 Note  = v.Note
             }).SingleOrDefault();

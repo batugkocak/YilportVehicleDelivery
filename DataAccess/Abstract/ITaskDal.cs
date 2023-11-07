@@ -1,6 +1,7 @@
 using Core.DataAccess;
 using Entities.Concrete;
 using Entities.DTOs;
+using Entities.DTOs.Task;
 using Task = Entities.Concrete.Task;
 
 namespace DataAccess.Abstract;

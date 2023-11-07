@@ -10,4 +10,5 @@ public interface IOwnerService
     IResult Add(Owner brand);
     IResult Delete(Owner brand);
     IResult Update(Owner brand);
+    
 }
