@@ -42,7 +42,7 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
         using VehicleDeliveryContext context = new();
         var result =  (from vehicle in context.Vehicles 
             where vehicle.IsDeleted != true
-            where vehicle.Status != (int) VehicleStatus.Görevde
+
             select new SelectBoxDto()
             {
                 Id = vehicle.Id,

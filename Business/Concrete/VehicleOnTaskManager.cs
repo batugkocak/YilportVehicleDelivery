@@ -48,8 +48,20 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         if (filterRequest.FirstGivenDate == null) filterRequest.FirstGivenDate = DateTime.MinValue;
         if (filterRequest.LastGivenDate == null) filterRequest.LastGivenDate = DateTime.Now;
         if (filterRequest.Size == -1) filterRequest.Size = int.MaxValue;
-        return new SuccessDataResult<PagingResponse<VehicleOnTaskForTableDto>>(_vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest),
-            Messages.VehiclesOnTaskListed);
+
+        var result = _vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest);
+        if (result != null)
+        {
+            foreach (var vot in result.Items)
+            {
+                vot.GivenDate = vot.GivenDate;
+            }
+            return new SuccessDataResult<PagingResponse<VehicleOnTaskForTableDto>>(
+                _vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest),
+                Messages.VehiclesOnTaskListed);
+
+        }
+        return new ErrorDataResult<PagingResponse<VehicleOnTaskForTableDto>>(null, "Araç Bulunamadı.");
     }
      public IDataResult<List<VehicleOnTaskForTableDto>> GetAllForTable()
     {

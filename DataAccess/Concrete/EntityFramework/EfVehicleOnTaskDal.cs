@@ -26,7 +26,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
                     VehicleOnTaskId = v.Id,
                     VehiclePlate = vehicle.Plate,
                     VehicleId = v.VehicleId,
-                    DriverName = dr.Name + " " + dr.Surname,
+                    DriverName = $"{dr.Name} {dr.Surname} - {dr.Mission}",
                     DepartmentName = d.Name,
                     TaskDefinition = v.TaskDefinition,
                     AuthorizedPerson = v.AuthorizedPerson,
