@@ -10,6 +10,7 @@ namespace Core.DataAccess
         T Get(Func<T, bool> filter);
 
         void Add(T entity);
+        T AddWithReturn(T entity);
 
         void Update(T entity);
 

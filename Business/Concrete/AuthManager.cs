@@ -11,12 +11,14 @@ namespace Business.Concrete;
     public class AuthManager:IAuthService
     {
         private IUserService _userService;
+        private IUserOperationClaimService _userOperationClaim;
         private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper, IUserOperationClaimService userOperationClaim)
         {
             _userService = userService;
             _tokenHelper = tokenHelper;
+            _userOperationClaim = userOperationClaim;
         }
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
@@ -32,10 +34,19 @@ namespace Business.Concrete;
                 PasswordSalt = passwordSalt,
                 Status = true
             };
-            _userService.Add(user);
+    
+            var addedUser = _userService.Add(user);
+            _userOperationClaim.Add(
+                new UserOperationClaim()
+                {
+                    OperationClaimId = userForRegisterDto.roleId,
+                    UserId = addedUser.Id,
+                }
+            );
+            
             return  new SuccessDataResult<User>(user,Messages.UserRegistered);
         }
-
+        
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetByUsername(userForLoginDto.Username);

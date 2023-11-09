@@ -72,6 +72,7 @@ public static class Messages
     
     public const string NotFound = "İstenilen veri(ler) bulunamadı.";
     public const string AuthorizationDenied = "Bu işlemi yapmaya yetkiniz yok..";
-    
 
+
+    public const string RoleAdded = "Kullanıcıya rol eklendi.";
 }
