@@ -32,9 +32,11 @@ public class OwnerManager: IOwnerService
         return new SuccessResult(Messages.OwnerAdded);
     }
 
-    public IResult Delete(Owner owner)
-    {
-        _ownerDal.Delete(owner);
+    public IResult Delete(int id) 
+    { 
+        var deletedOwner= _ownerDal.Get(o=> o.Id == id);
+        deletedOwner.IsDeleted = true;
+        _ownerDal.Update(deletedOwner);
         return new SuccessResult(Messages.OwnerDeleted);
     }
 
@@ -47,6 +49,12 @@ public class OwnerManager: IOwnerService
     public IDataResult<List<SelectBoxDto>> GetForSelectBox()
     {
         return new SuccessDataResult<List<SelectBoxDto>>(_ownerDal.GetOwnersForSelectBox(), Messages.OwnersListed);
+
+    }
+
+    public IDataResult<List<Owner>> GetForTable()
+    {
+        return new SuccessDataResult<List<Owner>>(_ownerDal.GetForTable(), Messages.OwnersListed);
 
     }
 }

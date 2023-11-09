@@ -30,6 +30,13 @@ public class OwnerController : Controller
         return Ok(result);
     }
     
+    [HttpGet]
+    [Route("ForTable")]
+    public IActionResult GetForTable()
+    {
+        var result = _ownerService.GetForTable();
+        return Ok(result);
+    }
     [HttpGet("{ownerId}")]
     public IActionResult Get(int ownerId)
     {
@@ -48,5 +55,16 @@ public class OwnerController : Controller
 
         return BadRequest(result.Message);
     }
-    
+    [Route("Delete/{ownerId}")]
+    [HttpPost]
+    public IActionResult Delete(int ownerId)
+    {
+        var result = _ownerService.Delete(ownerId);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
 }

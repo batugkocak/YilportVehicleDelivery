@@ -58,6 +58,7 @@ public static class Messages
     //Departments
     public const string DepartmentsAdded = "Departman başarıyla eklendi.";
     public const string DepartmentsListed = "Departmanlar başarıyla listelendi.";
+    public const string DepartmentDeleted = "Departman kaydı başarıyla silindi..";
 
     //Users
     public const string UserRegistered = "Kullanıcı başarıyla kayıt edildi.";

@@ -28,13 +28,15 @@ public class DepartmentManager : IDepartmentService
     public IResult Add(Department department)
     {
         _departmentDal.Add(department);
-        return new SuccessResult();
+        return new SuccessResult(Messages.DepartmentsAdded);
     }
 
-    public IResult Delete(Department department)
+    public IResult Delete(int id)
     {
-        _departmentDal.Delete(department);
-        return new SuccessResult();
+        var deletedDepartment= _departmentDal.Get(o=> o.Id == id);
+        deletedDepartment.IsDeleted = true;
+        _departmentDal.Update(deletedDepartment);
+        return new SuccessResult(Messages.DepartmentDeleted);
     }
 
     public IResult Update(Department department)

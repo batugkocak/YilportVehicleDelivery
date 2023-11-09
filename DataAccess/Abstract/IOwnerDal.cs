@@ -7,4 +7,5 @@ namespace DataAccess.Abstract;
 public interface IOwnerDal: IEntityRepository<Owner>
 {
     public List<SelectBoxDto> GetOwnersForSelectBox();
+    public List<Owner> GetForTable();
 }

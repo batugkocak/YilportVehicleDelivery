@@ -21,4 +21,18 @@ public class EfBrandDal : EfEntityRepositoryBase<Brand, VehicleDeliveryContext>,
 
         return result;
     }
+
+    public List<Brand> GetForTable()
+    {
+        using VehicleDeliveryContext context = new();
+        var result =  (from brand in context.Brands
+            where brand.IsDeleted != true
+            select new Brand()
+            {
+                Id = brand.Id,
+                Name = brand.Name
+
+            }).ToList();
+        return result;
+    }
 }

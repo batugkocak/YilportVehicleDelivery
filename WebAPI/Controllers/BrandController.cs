@@ -23,6 +23,13 @@ public class BrandController : Controller
     }
     
     [HttpGet]
+    [Route("ForTable")]
+    public IActionResult GetForTable()
+    {
+        var result = _brandService.GetForTable();
+        return Ok(result);
+    }
+    [HttpGet]
     [Route("ForSelectBox")]
     public IActionResult GetForSelectBox()
     {

@@ -13,28 +13,20 @@ public class DriverController : Controller
     {
         _driverService = driverService;
     }
-    
-    [HttpGet]
-    [Route("Details")]
-    public IActionResult Get()
-    {
-        var result = _driverService.GetAllDetails();
-        return Ok(result);
-    }
-    
-    
-    [HttpGet]
-    public IActionResult GetDetails()
-    {
-        var result = _driverService.GetAllDetails();
-        return Ok(result);
-    }
      
     [HttpGet]
     [Route("ForSelectBox")]
     public IActionResult GetForSelectBox()
     {
         var result = _driverService.GetForSelectBox();
+        return Ok(result);
+    }
+    
+    [HttpGet]
+    [Route("ForTable")]
+    public IActionResult GetForTable()
+    {
+        var result = _driverService.GetForTable();
         return Ok(result);
     }
     
@@ -53,6 +45,18 @@ public class DriverController : Controller
         {
             return Ok(result.Message);
         }
+        return BadRequest(result.Message);
+    }
+    [Route("Delete/{driverId}")]
+    [HttpPost]
+    public IActionResult Delete(int driverId)
+    {
+        var result = _driverService.Delete(driverId);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
         return BadRequest(result.Message);
     }
 }

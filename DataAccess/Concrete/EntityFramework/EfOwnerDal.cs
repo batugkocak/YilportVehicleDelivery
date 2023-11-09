@@ -21,4 +21,18 @@ public class EfOwnerDal: EfEntityRepositoryBase<Owner, VehicleDeliveryContext>, 
 
         return result;
     }
+
+    public List<Owner> GetForTable()
+    {
+        using VehicleDeliveryContext context = new();
+        var result =  (from owner in context.Owners
+            where owner.IsDeleted != true
+            select new Owner()
+            {
+                Id = owner.Id,
+                Name = owner.Name
+            }).ToList();
+
+        return result;
+    }
 }

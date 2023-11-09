@@ -9,14 +9,16 @@ namespace DataAccess.Concrete.EntityFramework;
 
 public class EfDriverDal: EfEntityRepositoryBase<Driver, VehicleDeliveryContext>, IDriverDal
 {
-    public List<DriverDto> GetDriverDetails()
+    public List<DriverDto> GetForTable()
     {
             using VehicleDeliveryContext context = new VehicleDeliveryContext();
             var result = (from driver in context.Drivers 
                 join department in context.Departments on driver.DepartmentId equals department.Id
-                
+                orderby driver.Created descending 
+                where driver.IsDeleted != true
                 select new DriverDto()
                 {
+                    Id = driver.Id,
                     Name = driver.Name,
                     Surname = driver.Surname,
                     DepartmentName = department.Name,
@@ -27,6 +29,7 @@ public class EfDriverDal: EfEntityRepositoryBase<Driver, VehicleDeliveryContext>
 
             return result;
     }
+    
 
     public List<SelectBoxDto> GetDriversForSelectBox()
     { using VehicleDeliveryContext context = new();

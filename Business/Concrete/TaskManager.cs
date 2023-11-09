@@ -42,9 +42,11 @@ public class TaskManager : ITaskService
         return new SuccessResult(Messages.TaskAdded);
     }
 
-    public IResult Delete(Task task)
+    public IResult Delete(int id)
     {
-        _taskDal.Delete(task);
+        var deletedTask= _taskDal.Get(o=> o.Id == id);
+        deletedTask.IsDeleted = true;
+        _taskDal.Update(deletedTask);
         return new SuccessResult(Messages.TaskDeleted);
     }
 

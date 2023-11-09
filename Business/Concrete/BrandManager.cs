@@ -31,9 +31,11 @@ public class BrandManager : IBrandService
         return new SuccessResult(Messages.BrandAdded);
     }
 
-    public IResult Delete(Brand brand)
+    public IResult Delete(int id)
     {
-        _brandDal.Delete(brand);
+        var deletedBrand= _brandDal.Get(o=> o.Id == id);
+        deletedBrand.IsDeleted = true;
+        _brandDal.Update(deletedBrand);
         return new SuccessResult(Messages.BrandDeleted);
     }
 
@@ -47,6 +49,12 @@ public class BrandManager : IBrandService
     {
         return new SuccessDataResult<List<SelectBoxDto>>(_brandDal.GetBrandsForSelectBox(), Messages.BrandsListed);
 
+
+    }
+
+    public IDataResult<List<Brand>> GetForTable()
+    {
+        return new SuccessDataResult<List<Brand>>(_brandDal.GetForTable(), Messages.BrandsListed);
 
     }
 }

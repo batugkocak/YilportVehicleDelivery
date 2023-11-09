@@ -7,7 +7,7 @@ namespace DataAccess.Abstract;
 
 public interface IDriverDal: IEntityRepository<Driver>
 {
-    public List<DriverDto> GetDriverDetails();
+    public List<DriverDto> GetForTable();
 
     public List<SelectBoxDto> GetDriversForSelectBox();
 }

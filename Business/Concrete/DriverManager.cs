@@ -32,9 +32,11 @@ public class DriverManager: IDriverService
         return new SuccessResult(Messages.DriverAdded);
     }
 
-    public IResult Delete(Driver driver)
+    public IResult Delete(int id)
     {
-      _driverDal.Delete(driver);
+        var deletedDepartment= _driverDal.Get(o=> o.Id == id);
+        deletedDepartment.IsDeleted = true;
+        _driverDal.Update(deletedDepartment);
       return new SuccessResult(Messages.DriverDeleted);
     }
 
@@ -44,9 +46,9 @@ public class DriverManager: IDriverService
         return new SuccessResult(Messages.DriverUpdated);
     }
 
-    public IDataResult<List<DriverDto>> GetAllDetails()
+    public IDataResult<List<DriverDto>> GetForTable()
     {
-        return new SuccessDataResult<List<DriverDto>>(_driverDal.GetDriverDetails(), Messages.DriversListed);
+        return new SuccessDataResult<List<DriverDto>>(_driverDal.GetForTable(), Messages.DriversListed);
 
     }
 

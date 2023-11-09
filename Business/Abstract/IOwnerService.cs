@@ -9,8 +9,9 @@ public interface IOwnerService
     IDataResult<List<Owner>> GetAll();
     IDataResult<Owner> GetById(int brandId);
     IResult Add(Owner brand);
-    IResult Delete(Owner brand);
+    IResult Delete(int id);
     IResult Update(Owner brand);
     IDataResult<List<SelectBoxDto>> GetForSelectBox();
+    IDataResult<List<Owner>> GetForTable();
     
 }

@@ -13,6 +13,7 @@ public class EfTaskDal: EfEntityRepositoryBase<Task, VehicleDeliveryContext>, IT
         using VehicleDeliveryContext context = new VehicleDeliveryContext();
         var result = (from t in context.Tasks
             join d in context.Departments on t.DepartmentId equals d.Id
+            orderby t.Created descending 
             select new TaskDetailDto()
             {
                 Name = t.Name,

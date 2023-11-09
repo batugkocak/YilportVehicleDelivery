@@ -120,7 +120,6 @@ public class VehicleManager : IVehicleService
     public IDataResult<List<SelectBoxDto>> GetForSelectBox()
     {
         return new SuccessDataResult<List<SelectBoxDto>>(_vehicleDal.GetVehiclesForSelectBox(), Messages.VehiclesListed);
-
     }
 
     public IResult CheckIfCarExistByPlate(String plate)

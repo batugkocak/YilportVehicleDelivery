@@ -10,10 +10,10 @@ public interface IDriverService
     IDataResult<List<Driver>> GetAll();
     IDataResult<Driver> GetById(int driverId);
     IResult Add(Driver driver);
-    IResult Delete(Driver driver);
+    IResult Delete(int id);
     IResult Update(Driver driver);
     
-    IDataResult<List<DriverDto>> GetAllDetails();
+    IDataResult<List<DriverDto>> GetForTable();
 
     IDataResult<List<SelectBoxDto>> GetForSelectBox();
 }
