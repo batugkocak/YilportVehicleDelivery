@@ -14,6 +14,7 @@ public interface ITaskService
     IResult Delete(int id);
     IResult Update(Task task);
 
-    IDataResult<List<TaskDetailDto>> GetAllDetails();
+    IDataResult<List<TaskDetailDto>> GetForTable();
+    IDataResult<List<SelectBoxDto>> GetForSelectBox();
 
 }

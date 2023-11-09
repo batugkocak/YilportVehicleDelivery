@@ -8,5 +8,6 @@ namespace DataAccess.Abstract;
 
 public interface ITaskDal : IEntityRepository<Task>
 {
-    public List<TaskDetailDto> GetTaskDetails();
+    public List<TaskDetailDto> GetForTable();
+    public List<SelectBoxDto> GetForSelectBox();
 }

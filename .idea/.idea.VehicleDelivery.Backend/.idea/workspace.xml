@@ -4,31 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IDepartmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IDepartmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IDriverService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IDriverService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IOwnerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IOwnerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IAuthService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Abstract/ITaskService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/ITaskService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/DepartmentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/DepartmentManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/DriverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/DriverManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/AuthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/AuthManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Concrete/OwnerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/OwnerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Concrete/TaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/TaskManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/UserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/UserManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IDriverDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IDriverDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IOwnerDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IOwnerDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfDriverDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfDriverDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfOwnerDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfOwnerDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DataAccess/EntityFramework/EfEntityRepositoryBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DataAccess/EntityFramework/EfEntityRepositoryBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/DataAccess/IEntityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/DataAccess/IEntityRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/ITaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/ITaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/Contexts/VehicleDeliveryContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/DTOs/Driver/DriverDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/Driver/DriverDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DTOs/Task/TaskDetailDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/Task/TaskDetailDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DTOs/User/UserForRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/User/UserForRegister.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/DriverController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/DriverController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/OwnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/OwnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/PredefinedTaskController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/PredefinedTaskController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,26 +41,35 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/529694297a85d68de8e828b331c716e8bac5792dad60b27fdb8ac7157bd1/ClaimsPrincipal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5d46f35cc10c0f21348d324d6965a48709c61fa67dfdcfa0254ce8cdbbb8/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IAuthService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IBrandService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IDepartmentService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IOwnerService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/ITaskService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/ITaskService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IUserService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/AuthManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/AuthManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/BrandManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/DepartmentManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/DepartmentManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/DriverManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/OwnerManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/TaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/DependencyResolvers/Autofac/AutofacBusinessModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Core/DataAccess/EntityFramework/EfEntityRepositoryBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Core/DataAccess/IEntityRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfDriverDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Entities/DTOs/VehicleOnTask/VehicleOnTaskDetailDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Entities/DTOs/VehicleOnTask/VehicleOnTaskForTableDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/ITaskDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfOwnerDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Entities/DTOs/Driver/DriverDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/BrandController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/DriverController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/DriverController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/OwnerController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -168,7 +173,7 @@
       <workItem from="1699379118426" duration="39000" />
       <workItem from="1699420710293" duration="16743000" />
       <workItem from="1699506178049" duration="253000" />
-      <workItem from="1699506459734" duration="1057000" />
+      <workItem from="1699506459734" duration="14956000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -362,7 +367,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699421073343</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities">
+      <option name="closed" value="true" />
+      <created>1699508617104</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699508617104</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities">
+      <option name="closed" value="true" />
+      <created>1699508667608</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699508667608</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,11 +419,13 @@
     <MESSAGE value="feat: Owner entity changed&#10;chore: Minor fixes" />
     <MESSAGE value="feat: Added Dal, service, manager and api endpoint for Brand, Department, Driver, Department Entities for user to choose with just a name on selectboxes" />
     <MESSAGE value="feat: Added Formatted Date For VehicleOnTaskDTOs, for making things easy for frontend &#10;chore: some refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added Formatted Date For VehicleOnTaskDTOs, for making things easy for frontend &#10;chore: some refactors" />
+    <MESSAGE value="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="Type#Core.Utilities.Results.Result" memberName="Message" />
         <PinnedItemInfo parentTag="Type#Core.Extensions.PagingResponse`1" memberName="Items" />
       </pinned-members>
     </pin-to-top-manager>

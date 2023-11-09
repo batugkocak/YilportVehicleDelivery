@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.JavaScript;
 using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
@@ -28,6 +29,12 @@ public class OwnerManager: IOwnerService
 
     public IResult Add(Owner owner)
     {
+        
+        var ownerExists = OwnerExists(owner.Name);
+        if (ownerExists.Success)
+        {
+            return new ErrorResult(Messages.OwnerAlreadyExists);
+        }
         _ownerDal.Add(owner);
         return new SuccessResult(Messages.OwnerAdded);
     }
@@ -42,6 +49,11 @@ public class OwnerManager: IOwnerService
 
     public IResult Update(Owner owner)
     {
+        var ownerExists = OwnerExists(owner.Name);
+        if (ownerExists.Success)
+        {
+            return new ErrorResult(Messages.OwnerAlreadyExists);
+        }
         _ownerDal.Update(owner);
         return new SuccessResult(Messages.OwnerUpdated);
     }
@@ -51,6 +63,16 @@ public class OwnerManager: IOwnerService
         return new SuccessDataResult<List<SelectBoxDto>>(_ownerDal.GetOwnersForSelectBox(), Messages.OwnersListed);
 
     }
+    public IResult OwnerExists(string name)
+    {
+        if (_ownerDal.GetAll(o => o.Name == name &&  o.IsDeleted != true).Any())
+        {
+            return new SuccessResult(Messages.OwnerAlreadyExists);
+        }
+        return new ErrorResult();
+    }
+    
+    
 
     public IDataResult<List<Owner>> GetForTable()
     {

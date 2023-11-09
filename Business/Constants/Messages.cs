@@ -54,7 +54,8 @@ public static class Messages
     public const string OwnerListed = "Araç sahibi başarıyla getirildi.";
     public const string OwnerDeleted = "Araç sahibi başarıyla silindi.";
     public const string OwnerUpdated = "Araç sahibi başarıyla güncellendi.";
-    
+    public const string OwnerAlreadyExists = "Böyle bir sahip zaten var.";
+
     //Departments
     public const string DepartmentsAdded = "Departman başarıyla eklendi.";
     public const string DepartmentsListed = "Departmanlar başarıyla listelendi.";

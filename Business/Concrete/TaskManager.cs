@@ -24,12 +24,18 @@ public class TaskManager : ITaskService
         return new SuccessDataResult<List<Task>>(_taskDal.GetAll(), Messages.TasksListed);
     }
 
-    public IDataResult<List<TaskDetailDto>> GetAllDetails()
+    public IDataResult<List<TaskDetailDto>> GetForTable()
     {
-        return new SuccessDataResult<List<TaskDetailDto>>(_taskDal.GetTaskDetails(), Messages.TasksListed);
+        return new SuccessDataResult<List<TaskDetailDto>>(_taskDal.GetForTable(), Messages.TasksListed);
 
     }
-    
+
+    public IDataResult<List<SelectBoxDto>> GetForSelectBox()
+    {
+        return new SuccessDataResult<List<SelectBoxDto>>(_taskDal.GetForSelectBox(), Messages.TasksListed);
+
+    }
+
 
     public IDataResult<Task> GetById(int taskId)
     {
@@ -41,6 +47,7 @@ public class TaskManager : ITaskService
         _taskDal.Add(task);
         return new SuccessResult(Messages.TaskAdded);
     }
+    
 
     public IResult Delete(int id)
     {

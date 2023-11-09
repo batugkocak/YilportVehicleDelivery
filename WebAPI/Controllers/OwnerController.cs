@@ -67,4 +67,17 @@ public class OwnerController : Controller
 
         return BadRequest(result.Message);
     }
+    
+    [Route("Update")]
+    [HttpPost]
+    public IActionResult Update(Owner owner)
+    {
+        var result = _ownerService.Update(owner);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
 }

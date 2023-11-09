@@ -24,11 +24,11 @@ public class PredefinedTaskController : Controller
         return Ok(result);
     }
     
-    [Route("Details")]
+    [Route("ForTable")]
     [HttpGet]
-    public IActionResult GetDetailed()
+    public IActionResult GetForTable()
     {
-        var result = _taskService.GetAllDetails();
+        var result = _taskService.GetForTable();
         return Ok(result);
     }
     
@@ -43,6 +43,39 @@ public class PredefinedTaskController : Controller
     public IActionResult Post(Task task)
     {
         var result = _taskService.Add(task);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    
+    [Route("Delete/{taskId}")]
+    [HttpPost]
+    public IActionResult Delete(int taskId)
+    {
+        var result = _taskService.Delete(taskId);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    [HttpGet]
+    [Route("ForSelectBox")]
+    public IActionResult GetForSelectBox()
+    {
+        var result = _taskService.GetForSelectBox();
+        return Ok(result);
+    }
+       
+    [Route("Update")]
+    [HttpPost]
+    public IActionResult Update(Task task)
+    {
+        var result = _taskService.Update(task);
         if (result.Success)
         {
             return Ok(result.Message);

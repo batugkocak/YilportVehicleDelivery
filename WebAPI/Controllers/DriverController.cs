@@ -59,4 +59,17 @@ public class DriverController : Controller
 
         return BadRequest(result.Message);
     }
+    
+    [Route("Update")]
+    [HttpPost]
+    public IActionResult Update(Driver driver)
+    {
+        var result = _driverService.Update(driver);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
 }
