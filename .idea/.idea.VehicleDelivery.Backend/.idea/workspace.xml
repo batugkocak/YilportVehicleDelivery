@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added dateType for VOT Archive Table filter">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleOnTaskManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +24,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5d46f35cc10c0f21348d324d6965a48709c61fa67dfdcfa0254ce8cdbbb8/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5da815ad714e4dffadd6770f00a3561a16800/_01325/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b3b6985aad11c5d633d75b545f5f5f4fc7e50918ad1cb9f6b615682f5bfb76d/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aacc74311ca994f12b71cddb22241be9d6654c65e94f5985c5488dee396916f/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/afc76b3b88246ff664a45163f44dcef02f2b2a6aa36c729eab3fd3eae81d1/SecurityAlgorithms.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/faad573785ee65d7c67916f47668231cad8da22417e2ad3c944083519f5ec1b3/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -139,7 +140,7 @@
       <workItem from="1699506178049" duration="253000" />
       <workItem from="1699506459734" duration="19583000" />
       <workItem from="1699592962794" duration="415000" />
-      <workItem from="1699594129597" duration="4392000" />
+      <workItem from="1699594129597" duration="7987000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -365,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699535390441</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: Added dateType for VOT Archive Table filter">
+      <option name="closed" value="true" />
+      <created>1699600074472</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699600074472</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +413,8 @@
     <MESSAGE value="feat: Delete functions are updated to change IsDelete prop of some entities&#10;feat: GetForTable endpoints are added for same entities" />
     <MESSAGE value="feat: New functions added to entities for frontend requierements" />
     <MESSAGE value="feat: Added Register User with role functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added Register User with role functionality" />
+    <MESSAGE value="feat: Added dateType for VOT Archive Table filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added dateType for VOT Archive Table filter" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
