@@ -1,4 +1,3 @@
-using System.Linq.Expressions;
 using Business.Abstract;
 using Business.Constants;
 using Core.Extensions;
@@ -29,8 +28,8 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     
     public IDataResult<List<VehicleOnTaskDetailDto>> GetAllDetails(VotFilterRequest filterRequest)
     {
-        if (filterRequest.FirstGivenDate == null) filterRequest.FirstGivenDate = DateTime.MinValue;
-        if (filterRequest.LastGivenDate == null) filterRequest.LastGivenDate = DateTime.Now;
+        if (filterRequest.FirstDate == null) filterRequest.FirstDate = DateTime.MinValue;
+        if (filterRequest.LastDate == null) filterRequest.LastDate = DateTime.Now;
         if (filterRequest.Size == -1) filterRequest.Size = int.MaxValue;
         return new SuccessDataResult<List<VehicleOnTaskDetailDto>>(_vehicleOnTaskDal.GetVehicleOnTaskDetailFinished(filterRequest), Messages.VehiclesOnTaskListed);
     }
@@ -42,11 +41,11 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     }
 
     
-
+    
     public IDataResult<PagingResponse<VehicleOnTaskForTableDto>> GetAllForArchiveTable(VotFilterRequest filterRequest)
     {
-        if (filterRequest.FirstGivenDate == null) filterRequest.FirstGivenDate = DateTime.MinValue;
-        if (filterRequest.LastGivenDate == null) filterRequest.LastGivenDate = DateTime.Now;
+        if (filterRequest.FirstDate == null) filterRequest.FirstDate = DateTime.MinValue;
+        if (filterRequest.LastDate == null) filterRequest.LastDate = DateTime.Now;
         if (filterRequest.Size == -1) filterRequest.Size = int.MaxValue;
 
         var result = _vehicleOnTaskDal.GetVehicleOnTaskForTableFinished(filterRequest);

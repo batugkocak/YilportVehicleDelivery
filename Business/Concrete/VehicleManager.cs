@@ -30,7 +30,8 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
     }
     
-    //[SecuredOperation("admin")]
+
+
     public IDataResult<List<VehicleForTableDTO>> GetAllDetailsForTable()
     {
         var result = _vehicleDal.GetVehicleDetails();
