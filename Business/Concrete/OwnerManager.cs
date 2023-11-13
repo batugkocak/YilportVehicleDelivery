@@ -10,11 +10,13 @@ namespace Business.Concrete;
 
 public class OwnerManager: IOwnerService
 {
-    private IOwnerDal _ownerDal;
+    private readonly IOwnerDal _ownerDal;
+    private readonly IVehicleDal _vehicleDal;
 
-    public OwnerManager(IOwnerDal ownerDal)
+    public OwnerManager(IOwnerDal ownerDal, IVehicleDal vehicleDal)
     {
         _ownerDal = ownerDal;
+        _vehicleDal = vehicleDal;
     }
 
     public IDataResult<List<Owner>> GetAll()
@@ -42,6 +44,11 @@ public class OwnerManager: IOwnerService
     public IResult Delete(int id) 
     { 
         var deletedOwner= _ownerDal.Get(o=> o.Id == id);
+        var result = CheckIfOwnerHasVehicles(id).Success;
+        if (!result)
+        {
+            return new ErrorResult(Messages.OwnerHasVehicles);
+        }
         deletedOwner.IsDeleted = true;
         _ownerDal.Update(deletedOwner);
         return new SuccessResult(Messages.OwnerDeleted);
@@ -79,4 +86,17 @@ public class OwnerManager: IOwnerService
         return new SuccessDataResult<List<Owner>>(_ownerDal.GetForTable(), Messages.OwnersListed);
 
     }
+    
+    private IResult CheckIfOwnerHasVehicles(int ownerId)
+    {
+        var result = _vehicleDal.GetAll(v => v.OwnerId == ownerId);
+        if (result.Any())
+        {
+            return new ErrorResult(Messages.OwnerHasVehicles);
+        }
+
+        return new SuccessResult();
+    }
+    
+    
 }

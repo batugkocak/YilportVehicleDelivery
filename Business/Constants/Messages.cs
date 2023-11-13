@@ -55,11 +55,13 @@ public static class Messages
     public const string OwnerDeleted = "Araç sahibi başarıyla silindi.";
     public const string OwnerUpdated = "Araç sahibi başarıyla güncellendi.";
     public const string OwnerAlreadyExists = "Böyle bir sahip zaten var.";
-
+    public const string OwnerHasVehicles = "Bu sahibe ait araç var, önce onları silin.";
+    
     //Departments
     public const string DepartmentsAdded = "Departman başarıyla eklendi.";
     public const string DepartmentsListed = "Departmanlar başarıyla listelendi.";
     public const string DepartmentDeleted = "Departman kaydı başarıyla silindi..";
+    public const string DepartmentUpdated = "Departman kaydı başarıyla güncellendi.";
 
     //Users
     public const string UserRegistered = "Kullanıcı başarıyla kayıt edildi.";
