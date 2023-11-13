@@ -1,6 +1,7 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
 using Entities.DTOs;
+using Entities.DTOs.Brand;
 
 namespace Business.Abstract;
 
@@ -12,6 +13,6 @@ public interface IBrandService
     IResult Delete(int id);
     IResult Update(Brand brand);
     IDataResult<List<SelectBoxDto>> GetForSelectBox();
-    IDataResult<List<Brand>> GetForTable();
+    IDataResult<List<BrandForTableDto>> GetForTable();
 
 }

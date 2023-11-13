@@ -78,8 +78,6 @@ public class VehicleManager : IVehicleService
     [ValidationAspect(typeof(VehicleValidator))]
     public IResult Add(Vehicle vehicle)
     {
-
-        
         var result = BusinessRules.Run(CheckIfCarExistByPlate(vehicle.Plate!));
         if (result != null)
         {
@@ -125,7 +123,7 @@ public class VehicleManager : IVehicleService
 
     public IResult CheckIfCarExistByPlate(String plate)
     {
-        var result = _vehicleDal.GetAll(u => u.Plate == plate).Any();
+        var result = _vehicleDal.GetAll(u => u.Plate == plate && u.IsDeleted != true).Any();
         if (result)
         {
             return new ErrorResult(Messages.VehicleAlreadyExist);

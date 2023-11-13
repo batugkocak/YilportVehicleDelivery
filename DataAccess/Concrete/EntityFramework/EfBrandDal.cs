@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework.Contexts;
 using Entities.Concrete;
 using Entities.DTOs;
+using Entities.DTOs.Brand;
 
 namespace DataAccess.Concrete.EntityFramework;
 
@@ -22,12 +23,12 @@ public class EfBrandDal : EfEntityRepositoryBase<Brand, VehicleDeliveryContext>,
         return result;
     }
 
-    public List<Brand> GetForTable()
+    public List<BrandForTableDto> GetForTable()
     {
         using VehicleDeliveryContext context = new();
         var result =  (from brand in context.Brands
             where brand.IsDeleted != true
-            select new Brand()
+            select new BrandForTableDto()
             {
                 Id = brand.Id,
                 Name = brand.Name

@@ -28,7 +28,6 @@ public static class Messages
     public const string VehiclesOnTaskListed = "Araç görevleri başarıyla listelendi.";
     public const string VehicleOnTaskUpdated = "Araç görevi güncellendi.";
     public const string VehicleOnTaskListed = "Araç görev detayı getirildi.";
-    public const string VehicleOnTaskDeleted = "Araç görevi silindi.";
     public const string VehicleOnTaskTaskFinished = "Araç görevi başarıyla tamamlandı.";
     public const string VehicleOnTaskTaskDeleted = "Araç görevi başarıyla silindi.";
 
@@ -47,6 +46,7 @@ public static class Messages
     public const string BrandListed = "Marka başarıyla getirildi.";
     public const string BrandDeleted = "Marka başarıyla silindi.";
     public const string BrandUpdated = "Marka başarıyla güncellendi.";
+    public const string BrandAlreadyExists = "Bu adda bir marka zaten var.";
     
     //Owner
     public const string OwnerAdded = "Araç sahibi başarıyla eklendi.";

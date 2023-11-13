@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: Added dateType for VOT Archive Table filter">
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Entities/DTOs/Brand/BrandForTableDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -140,7 +148,9 @@
       <workItem from="1699506178049" duration="253000" />
       <workItem from="1699506459734" duration="19583000" />
       <workItem from="1699592962794" duration="415000" />
-      <workItem from="1699594129597" duration="7987000" />
+      <workItem from="1699594129597" duration="12590000" />
+      <workItem from="1699645933674" duration="80000" />
+      <workItem from="1699853322654" duration="3839000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -374,7 +384,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699600074472</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1699604562752</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699604562752</updated>
+    </task>
+    <task id="LOCAL-00031" summary="bugfix">
+      <option name="closed" value="true" />
+      <created>1699604568250</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1699604568250</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +440,8 @@
     <MESSAGE value="feat: New functions added to entities for frontend requierements" />
     <MESSAGE value="feat: Added Register User with role functionality" />
     <MESSAGE value="feat: Added dateType for VOT Archive Table filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added dateType for VOT Archive Table filter" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
