@@ -89,7 +89,7 @@ public class OwnerManager: IOwnerService
     
     private IResult CheckIfOwnerHasVehicles(int ownerId)
     {
-        var result = _vehicleDal.GetAll(v => v.OwnerId == ownerId);
+        var result = _vehicleDal.GetAll(v => v.OwnerId == ownerId && v.IsDeleted != true);
         if (result.Any())
         {
             return new ErrorResult(Messages.OwnerHasVehicles);

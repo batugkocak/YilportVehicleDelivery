@@ -66,7 +66,8 @@ public class EfVehicleDal : EfEntityRepositoryBase<Vehicle, VehicleDeliveryConte
                 Id = v.Id,
                 Plate = v.Plate,
                 Type  = v.Type.IntToString<VehicleType>(),
-                Brand = b.Name, // Brand Table
+                Brand = b.Name, 
+                Owner = o.Name,
                 ModelName = v.ModelName,
                 Status =  v.Status.IntToString<VehicleStatus>(),
             }).ToList();

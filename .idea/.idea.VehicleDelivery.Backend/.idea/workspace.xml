@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Entities/DTOs/Brand/BrandForTableDto.cs" afterDir="false" />
+    <list default="true" id="fc8e434d-feb4-47d9-b81e-5940c8014676" name="Changes" comment="feat: DepartmentManager etc. are done for frontend">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VehicleDelivery.Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Abstract/IBrandService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/BrandManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/VehicleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Constants/Messages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Constants/Messages.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Abstract/IBrandDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/BrandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Concrete/OwnerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Concrete/OwnerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Concrete/EntityFramework/EfVehicleDal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/DTOs/Vehicle/VehicleForTableDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/DTOs/Vehicle/VehicleForTableDTO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +29,28 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aacc74311ca994f12b71cddb22241be9d6654c65e94f5985c5488dee396916f/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/afc76b3b88246ff664a45163f44dcef02f2b2a6aa36c729eab3fd3eae81d1/SecurityAlgorithms.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/faad573785ee65d7c67916f47668231cad8da22417e2ad3c944083519f5ec1b3/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IBrandService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IDepartmentService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Abstract/IDepartmentService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/BrandManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/DepartmentManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/OwnerManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleOnTaskManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Concrete/VehicleManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/Business/Constants/Messages.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DependencyResolvers/CoreModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ICoreModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Utilities/IoC/ServiceTool.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfVehicleOnTaskDal.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/FilterQueryObjects/VehicleOnTask/VotFilterRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/IBrandDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/IDepartmentDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Abstract/IDepartmentDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfBrandDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/DataAccess/Concrete/EntityFramework/EfDepartmentDal.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/BrandController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/DepartmentController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/DepartmentController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/batugkocak/projects/VehicleDelivery.Backend/WebAPI/Controllers/DepartmentController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -150,7 +158,7 @@
       <workItem from="1699592962794" duration="415000" />
       <workItem from="1699594129597" duration="12590000" />
       <workItem from="1699645933674" duration="80000" />
-      <workItem from="1699853322654" duration="3839000" />
+      <workItem from="1699853322654" duration="9612000" />
     </task>
     <task id="LOCAL-00001" summary="I'm not entirely sure what specific changes were made in this commit since some time has passed. Most of the changes are for the client">
       <option name="closed" value="true" />
@@ -400,7 +408,47 @@
       <option name="project" value="LOCAL" />
       <updated>1699604568250</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat: BrandManager etc. are done for frontend">
+      <option name="closed" value="true" />
+      <created>1699857234707</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699857234707</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: BrandManager etc. are done for frontend">
+      <option name="closed" value="true" />
+      <created>1699857242261</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1699857242261</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: BrandManager etc. are done for frontend">
+      <option name="closed" value="true" />
+      <created>1699857253427</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699857253427</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat: Added an function to see if there is/are car(s) for owner before delete">
+      <option name="closed" value="true" />
+      <created>1699861920725</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699861920725</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: DepartmentManager etc. are done for frontend">
+      <option name="closed" value="true" />
+      <created>1699861957421</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1699861957421</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +489,10 @@
     <MESSAGE value="feat: Added Register User with role functionality" />
     <MESSAGE value="feat: Added dateType for VOT Archive Table filter" />
     <MESSAGE value="bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
+    <MESSAGE value="feat: BrandManager etc. are done for frontend" />
+    <MESSAGE value="feat: Added an function to see if there is/are car(s) for owner before delete" />
+    <MESSAGE value="feat: DepartmentManager etc. are done for frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: DepartmentManager etc. are done for frontend" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
