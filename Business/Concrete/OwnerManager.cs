@@ -43,12 +43,13 @@ public class OwnerManager: IOwnerService
 
     public IResult Delete(int id) 
     { 
-        var deletedOwner= _ownerDal.Get(o=> o.Id == id);
         var result = CheckIfOwnerHasVehicles(id).Success;
         if (!result)
         {
             return new ErrorResult(Messages.OwnerHasVehicles);
         }
+        var deletedOwner= _ownerDal.Get(o=> o.Id == id);
+
         deletedOwner.IsDeleted = true;
         _ownerDal.Update(deletedOwner);
         return new SuccessResult(Messages.OwnerDeleted);

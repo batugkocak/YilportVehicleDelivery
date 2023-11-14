@@ -10,10 +10,12 @@ namespace Business.Concrete;
 
 public class BrandManager : IBrandService
 {
-    private IBrandDal _brandDal;
-    public BrandManager(IBrandDal brandDal)
+    private readonly IBrandDal _brandDal;
+    private readonly IVehicleDal _vehicleDal;
+    public BrandManager(IBrandDal brandDal, IVehicleDal vehicleDal)
     {
         _brandDal = brandDal;
+        _vehicleDal = vehicleDal;
     }
 
     public IDataResult<List<Brand>> GetAll()
@@ -38,6 +40,11 @@ public class BrandManager : IBrandService
 
     public IResult Delete(int id)
     {
+        var result = CheckIfBrandHasVehicles(id).Success;
+        if (!result)
+        {
+            return new ErrorResult(Messages.OwnerHasVehicles);
+        }
         var deletedBrand= _brandDal.Get(o=> o.Id == id);
         deletedBrand.IsDeleted = true;
         _brandDal.Update(deletedBrand);
@@ -74,5 +81,16 @@ public class BrandManager : IBrandService
             return new SuccessResult(Messages.BrandAlreadyExists);
         }
         return new ErrorResult();
+    }
+    
+    private IResult CheckIfBrandHasVehicles(int brandId)
+    {
+        var result = _vehicleDal.GetAll(v => v.BrandId == brandId && v.IsDeleted != true);
+        if (result.Any())
+        {
+            return new ErrorResult(Messages.BrandHasVehicles);
+        }
+
+        return new SuccessResult();
     }
 }

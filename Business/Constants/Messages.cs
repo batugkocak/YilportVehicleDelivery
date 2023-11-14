@@ -47,6 +47,7 @@ public static class Messages
     public const string BrandDeleted = "Marka başarıyla silindi.";
     public const string BrandUpdated = "Marka başarıyla güncellendi.";
     public const string BrandAlreadyExists = "Bu adda bir marka zaten var.";
+    public const string BrandHasVehicles = "Bu markaya ait araç var, önce onları silin..";
     
     //Owner
     public const string OwnerAdded = "Araç sahibi başarıyla eklendi.";
