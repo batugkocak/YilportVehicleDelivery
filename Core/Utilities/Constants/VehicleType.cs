@@ -1,7 +1,6 @@
 // ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
 namespace Business.Constants;
-//TODO: Kapalı Kasa Kamyonet/ Açık Kasa Kamyonet / İtfaiye Arazöz should be added.
 public enum VehicleType
 {
     None,
@@ -11,18 +10,7 @@ public enum VehicleType
     Ambulans,
     Traktör,
     İtfaiye,
-    Kamyonet
+    Kamyonet,
+    Arazöz,
+    Diğer
 }
-// public enum VehicleType
-// {
-//     [Description("None")]
-//     None,
-//     [Description("Ticari")]
-//     Commercial,
-//     [Description("Otomobil")]
-//     Car,
-//     [Description("Transit")]
-//     Transit,
-//     [Description("Ambulans")]
-//     Ambulance,
-// }
