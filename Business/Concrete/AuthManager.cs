@@ -1,5 +1,4 @@
 using Business.Abstract;
-using Business.Aspects.Autofac;
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
@@ -33,7 +32,8 @@ namespace Business.Concrete;
                 LastName = userForRegisterDto.LastName,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Status = true
+                Status = true,
+                Creator = userForRegisterDto.Creator
             };
     
             var addedUser = _userService.Add(user);
@@ -62,6 +62,19 @@ namespace Business.Concrete;
             }
 
             return new SuccessDataResult<User>(userToCheck,Messages.SuccessfulLogin);
+        }
+
+        public IResult DeleteUser(int id)
+        {
+            var userToDelete = _userService.GetById(id);
+            if (userToDelete.Data != null)
+            {
+                _userOperationClaim.DeleteByUserId(id);
+            }
+
+            _userService.Delete(id);
+            
+            return new SuccessResult(Messages.UserDeleted);
         }
 
         public IResult UserExists(string username)

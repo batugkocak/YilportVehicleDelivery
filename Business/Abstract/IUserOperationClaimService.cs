@@ -6,4 +6,5 @@ namespace Business.Abstract;
 public interface IUserOperationClaimService
 {
     IResult Add(UserOperationClaim userOperationClaim);
+    IResult DeleteByUserId(int id);
 }

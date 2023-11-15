@@ -66,6 +66,7 @@ public static class Messages
 
     //Users
     public const string UserRegistered = "Kullanıcı başarıyla kayıt edildi.";
+    public const string UserDeleted = "Kullanıcı başarıyla silindi.";
     public const string UserNotFound = "Böyle bir kullanıcı yok.";
     public const string PasswordError = "Şifre yanlış.";
     public const string UserAlreadyExists = "Böyle bir kullanıcı zaten var.";
@@ -78,4 +79,6 @@ public static class Messages
 
 
     public const string RoleAdded = "Kullanıcıya rol eklendi.";
+    public const string RoleDeleted = "Rol silindi.";
+
 }

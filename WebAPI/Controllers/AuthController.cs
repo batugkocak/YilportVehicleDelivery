@@ -53,5 +53,18 @@ namespace WebAPI.Controllers
 
             return BadRequest(result.Message);
         }
+        
+        [HttpPost("{userId}/delete")]
+        public ActionResult Delete(int userId)
+        {
+
+            var result = _authService.DeleteUser(userId);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+
+            return BadRequest(result.Message);
+        }
     }
 }

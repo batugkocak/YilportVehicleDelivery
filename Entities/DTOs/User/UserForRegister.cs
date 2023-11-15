@@ -9,4 +9,8 @@ public class UserForRegisterDto : IDto
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public int RoleId { get; set; }
+    
+    public string? Creator { get; set; }
+    
+    public string? Changer { get; set; }
 }

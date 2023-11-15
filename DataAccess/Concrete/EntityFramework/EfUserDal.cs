@@ -29,8 +29,10 @@ public class EfUserDal:EfEntityRepositoryBase<User, VehicleDeliveryContext>,IUse
             var result = from user in context.Users
                 join userOperationClaim in context.UserOperationClaims
                     on user.Id equals userOperationClaim.UserId
-                    join operationClaim in context.OperationClaims
+                join operationClaim in context.OperationClaims
                     on userOperationClaim.OperationClaimId equals operationClaim.Id
+                where user.IsDeleted != true
+                orderby operationClaim.Name ascending 
                 select new UserForList()
                 {
                     Id = user.Id,

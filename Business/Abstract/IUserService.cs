@@ -11,4 +11,9 @@ public interface IUserService
     User GetByUsername(string username);
 
     IDataResult<List<UserForList>> GetForList();
+    
+    IDataResult<User> GetById(int userId);
+    
+    IResult Delete(int id);
+    
 }
