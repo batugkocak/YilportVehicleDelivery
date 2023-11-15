@@ -14,8 +14,6 @@ using FluentValidation;
 using ValidationException = FluentValidation.ValidationException;
 
 namespace Business.Concrete;
-
-//TODO: Change the plate XXX to XXX_ when deleted, because of "CheckIfCarExistByPlate()".
 public class VehicleManager : IVehicleService
 {
     private IVehicleDal _vehicleDal;
@@ -30,8 +28,7 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(), Messages.VehiclesListed);
     }
     
-
-
+    
     public IDataResult<List<VehicleForTableDTO>> GetAllDetailsForTable()
     {
         var result = _vehicleDal.GetVehicleDetails();
@@ -74,7 +71,7 @@ public class VehicleManager : IVehicleService
         return new ErrorDataResult<Vehicle>(null, Messages.NotFound);
     }
     
-
+    [SecuredOperation("admin,user")]
     [ValidationAspect(typeof(VehicleValidator))]
     public IResult Add(Vehicle vehicle)
     {
@@ -100,7 +97,8 @@ public class VehicleManager : IVehicleService
         _vehicleDal.Update(deletedCar);
         return new SuccessResult(Messages.VehicleDeleted);
     }
-
+    
+    [ValidationAspect(typeof(VehicleValidator))]
     public IResult Update(Vehicle vehicle)
     {
         var oldVehicle = _vehicleDal.Get(v => v.Id == vehicle.Id);
@@ -115,7 +113,8 @@ public class VehicleManager : IVehicleService
         _vehicleDal.Update(vehicle);
         return new SuccessResult(Messages.VehicleUpdated);
     }
-
+    
+    [SecuredOperation("admin,user")]
     public IDataResult<List<SelectBoxDto>> GetForSelectBox()
     {
         return new SuccessDataResult<List<SelectBoxDto>>(_vehicleDal.GetVehiclesForSelectBox(), Messages.VehiclesListed);

@@ -1,4 +1,5 @@
 using Business.Abstract;
+using Business.Aspects.Autofac;
 using Business.Constants;
 using Core.Extensions;
 using Core.Utilities.Business;
@@ -74,6 +75,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         return new SuccessDataResult<VehicleOnTask>(_vehicleOnTaskDal.Get(vt => vt.Id == taskId), Messages.VehicleOnTaskListed);
     }
 
+    [SecuredOperation("admin,user")]
     public IResult Add(VehicleOnTask vehicleOnTask)
     {
         var result = BusinessRules.Run(CheckIfVehicleOnDutyById(vehicleOnTask.VehicleId));
@@ -91,6 +93,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         return new SuccessResult(Messages.VehicleOnTaskAdded);
     }
 
+    [SecuredOperation("admin,user")]
     public IResult Update(VehicleOnTask vehicleOnTask)
     {
         var oldVehicleOnTask = _vehicleOnTaskDal.Get(v => v.Id == vehicleOnTask.Id);
@@ -106,7 +109,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         return new SuccessResult(Messages.VehicleOnTaskUpdated);
     }
 
-    
+    [SecuredOperation("admin,user")]
     public IResult FinishTask(int taskId)
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);
@@ -118,6 +121,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         return new SuccessResult(Messages.VehicleOnTaskTaskFinished);
     }
     
+    [SecuredOperation("admin,user")]
     public IResult DeleteTask(int taskId)
     {
         var vehicleTask = _vehicleOnTaskDal.Get(t => t.Id == taskId);

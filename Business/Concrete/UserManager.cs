@@ -1,6 +1,8 @@
 using Business.Abstract;
 using Core.Entities.Concrete;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
+using Entities.DTOs.User;
 
 namespace Business.Concrete;
 
@@ -22,10 +24,16 @@ namespace Business.Concrete;
         public User Add(User user)
         {
             return _userDal.AddWithReturn(user);
-        }
+        }   
 
         public User GetByUsername(string username)
         {
             return _userDal.Get(u => u.Username == username);
+        }
+
+        public IDataResult<List<UserForList>> GetForList()
+        {
+            var result = _userDal.GetForList();
+            return new SuccessDataResult<List<UserForList>>(result);
         }
     }
