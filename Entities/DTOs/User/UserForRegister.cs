@@ -8,5 +8,5 @@ public class UserForRegisterDto : IDto
     public string Password { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public int roleId { get; set; }
+    public int RoleId { get; set; }
 }

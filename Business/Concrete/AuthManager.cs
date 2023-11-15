@@ -1,4 +1,5 @@
 using Business.Abstract;
+using Business.Aspects.Autofac;
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
@@ -20,7 +21,7 @@ namespace Business.Concrete;
             _tokenHelper = tokenHelper;
             _userOperationClaim = userOperationClaim;
         }
-
+        
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
             byte[] passwordHash, passwordSalt;
@@ -39,7 +40,7 @@ namespace Business.Concrete;
             _userOperationClaim.Add(
                 new UserOperationClaim()
                 {
-                    OperationClaimId = userForRegisterDto.roleId,
+                    OperationClaimId = userForRegisterDto.RoleId,
                     UserId = addedUser.Id,
                 }
             );
@@ -63,9 +64,9 @@ namespace Business.Concrete;
             return new SuccessDataResult<User>(userToCheck,Messages.SuccessfulLogin);
         }
 
-        public IResult UserExists(string email)
+        public IResult UserExists(string username)
         {
-            if (_userService.GetByUsername(email)!=null)
+            if (_userService.GetByUsername(username)!=null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }

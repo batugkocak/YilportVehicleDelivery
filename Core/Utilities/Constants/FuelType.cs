@@ -10,6 +10,7 @@ public enum FuelType
     LPG,
     Elektrik,
     Hibrit,
+    Diğer,
 }  
 
 // public enum FuelType
