@@ -2,6 +2,7 @@ using Core.Entities;
 using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlTypes;
 using Task = Entities.Concrete.Task;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts;
@@ -10,7 +11,8 @@ public class VehicleDeliveryContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySQL("Server=localhost; Database=vehicleDelivery; Uid=root; Pwd=myStrongPassword");
+        //optionsBuilder.UseMySQL("Server=localhost; Database=vehicleDelivery; Uid=root; Pwd=myStrongPassword");
+        optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=VehicleDelivery;Trusted_Connection=True;");
     }
 
     public DbSet<Vehicle> Vehicles { get; set; }

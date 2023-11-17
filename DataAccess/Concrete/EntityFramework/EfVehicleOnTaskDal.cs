@@ -40,7 +40,7 @@ public class EfVehicleOnTaskDal: EfEntityRepositoryBase<VehicleOnTask, VehicleDe
                 AuthorizedPerson = v.AuthorizedPerson,
                 Address = v.Address,
                 GivenDate = v.GivenDate,
-                ReturnDate = v.ReturnDate
+                ReturnDate = (DateTime)v.ReturnDate
             }).OrderByDescending(vot => vot.GivenDate).ToList();
         return result;
     }

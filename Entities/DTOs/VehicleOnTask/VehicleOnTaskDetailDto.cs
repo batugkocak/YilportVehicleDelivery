@@ -14,6 +14,6 @@ public class VehicleOnTaskDetailDto : IDto
     public string? TaskDefinition { get; set; }
     public DateTime GivenDate { get; set; }
     public string? GivenDateFormatted => GivenDate != null ? GivenDate.ToString("dd-MM-yyyy HH:mm") : "";
-    public DateTime ReturnDate { get; set; }
-    public string? ReturnDateFormatted => ReturnDate != null ? ReturnDate.ToString("dd-MM-yyyy HH:mm") : "";
+    public DateTime? ReturnDate  { get; set; }
+    public string? ReturnDateFormatted => ReturnDate != null ? ReturnDate.Value.ToString("dd-MM-yyyy HH:mm") : "";
 }

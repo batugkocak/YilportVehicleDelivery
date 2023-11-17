@@ -12,7 +12,7 @@ public class VehicleOnTask : BaseEntity
     
     public string? TaskDefinition { get; set; }
     public DateTime GivenDate { get; set; }
-    public DateTime ReturnDate { get; set; }
+    public DateTime? ReturnDate { get; set; }
 
     public bool IsFinished { get; set; }
     

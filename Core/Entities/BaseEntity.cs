@@ -20,5 +20,5 @@ public class BaseEntity : IEntity
     public DateTime Created { get; set; }
     
 
-    public DateTime Changed { get; set; }
+    public DateTime? Changed { get; set; }
 }

@@ -103,7 +103,6 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
        updatedVehicle.Status = (int) VehicleStatus.Görevde;
        updatedVehicle.Changer = vehicleOnTask.Creator;
        _vehicleService.Update(updatedVehicle);
-
         _vehicleOnTaskDal.Add(vehicleOnTask);
         return new SuccessResult(Messages.VehicleOnTaskAdded);
     }
