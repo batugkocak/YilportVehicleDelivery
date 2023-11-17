@@ -39,6 +39,7 @@ public static class Messages
     public const string DriverUpdated = "Sürücü başarıyla güncellendi";
     public const string DriverListed= "Sürücü başarıyla getirildi.";
     public const string DriverDeleted = "Sürücü kaydı başarıyla silindi.";
+    public const string DriverIsOnMission = "Sürücü halihazırda görevde. Lütfen önce görevi bitirin.";
     
     //Brand
     public const string BrandAdded = "Marka başarıyla eklendi.";
@@ -63,6 +64,9 @@ public static class Messages
     public const string DepartmentsListed = "Departmanlar başarıyla listelendi.";
     public const string DepartmentDeleted = "Departman kaydı başarıyla silindi..";
     public const string DepartmentUpdated = "Departman kaydı başarıyla güncellendi.";
+    public const string DepartmentHasVehicles = "Departmana ait araç var, önce onları silin.";
+    public const string DepartmentHasActiveTask = "Departmana ait aktif görev var, önce onları silin.";
+    public const string DepartmantHasPredefinedTask = "Departmana ait öntanımlı görev var, önce onları silin veya düzenleyin.";
 
     //Users
     public const string UserRegistered = "Kullanıcı başarıyla kayıt edildi.";
@@ -80,5 +84,4 @@ public static class Messages
 
     public const string RoleAdded = "Kullanıcıya rol eklendi.";
     public const string RoleDeleted = "Rol silindi.";
-
 }

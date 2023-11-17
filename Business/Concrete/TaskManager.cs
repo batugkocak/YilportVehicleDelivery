@@ -36,6 +36,12 @@ public class TaskManager : ITaskService
 
     }
 
+    public IDataResult<List<Task>> GetByDepartmentId(int id)
+    {
+        return new SuccessDataResult<List<Task>>(_taskDal.GetAll(t => t.DepartmentId == id && t.IsDeleted != true));
+
+    }
+
 
     public IDataResult<Task> GetById(int taskId)
     {

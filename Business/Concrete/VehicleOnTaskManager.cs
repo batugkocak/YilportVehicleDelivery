@@ -69,8 +69,22 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
             Messages.VehiclesOnTaskListed);
     }
 
+     public IDataResult<List<VehicleOnTask>> GetByDriverId(int id)
+     {
+         return new SuccessDataResult<List<VehicleOnTask>>(_vehicleOnTaskDal.GetAll(vot => 
+             vot.DriverId == id && 
+             vot.IsFinished != true && vot.IsDeleted != true));
+     }
 
-    public IDataResult<VehicleOnTask> GetById(int taskId)
+     public IDataResult<List<VehicleOnTask>> GetByDepartmentId(int id)
+     {
+         return new SuccessDataResult<List<VehicleOnTask>>(_vehicleOnTaskDal.GetAll(vot => 
+             vot.DepartmentId == id && 
+             vot.IsFinished != true && vot.IsDeleted != true));
+     }
+
+
+     public IDataResult<VehicleOnTask> GetById(int taskId)
     {
         return new SuccessDataResult<VehicleOnTask>(_vehicleOnTaskDal.Get(vt => vt.Id == taskId), Messages.VehicleOnTaskListed);
     }
@@ -87,6 +101,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
         
        var updatedVehicle =  _vehicleService.GetById(vehicleOnTask.VehicleId).Data;
        updatedVehicle.Status = (int) VehicleStatus.Görevde;
+       updatedVehicle.Changer = vehicleOnTask.Creator;
        _vehicleService.Update(updatedVehicle);
 
         _vehicleOnTaskDal.Add(vehicleOnTask);
@@ -148,6 +163,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     {
         var updatedVehicle =  _vehicleService.GetById(vehicleOnTask.VehicleId).Data;
         updatedVehicle.Status = (int) VehicleStatus.Müsait;
+        updatedVehicle.Changer = vehicleOnTask.Changer;
         _vehicleService.Update(updatedVehicle);
     }
 }

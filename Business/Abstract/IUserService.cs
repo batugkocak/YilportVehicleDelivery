@@ -10,7 +10,7 @@ public interface IUserService
     User Add(User user);
     User GetByUsername(string username);
 
-    IDataResult<List<UserForList>> GetForList();
+    IDataResult<List<UserForTable>> GetForList();
     
     IDataResult<User> GetById(int userId);
     

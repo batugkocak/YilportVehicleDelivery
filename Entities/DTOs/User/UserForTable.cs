@@ -1,6 +1,6 @@
 namespace Entities.DTOs.User;
 
-public class UserForList
+public class UserForTable
 {
     public int Id { get; set; }
     public string Username { get; set; }

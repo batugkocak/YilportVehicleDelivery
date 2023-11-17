@@ -11,11 +11,11 @@ namespace Business.Concrete;
 public class BrandManager : IBrandService
 {
     private readonly IBrandDal _brandDal;
-    private readonly IVehicleDal _vehicleDal;
-    public BrandManager(IBrandDal brandDal, IVehicleDal vehicleDal)
+    private readonly IVehicleService _vehicleService;
+    public BrandManager(IBrandDal brandDal, IVehicleService vehicleService)
     {
         _brandDal = brandDal;
-        _vehicleDal = vehicleDal;
+        _vehicleService = vehicleService;
     }
 
     public IDataResult<List<Brand>> GetAll()
@@ -85,8 +85,8 @@ public class BrandManager : IBrandService
     
     private IResult CheckIfBrandHasVehicles(int brandId)
     {
-        var result = _vehicleDal.GetAll(v => v.BrandId == brandId && v.IsDeleted != true);
-        if (result.Any())
+        var result = _vehicleService.GetByBrandId(brandId);
+        if (result.Data.Any())
         {
             return new ErrorResult(Messages.BrandHasVehicles);
         }

@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.JavaScript;
 using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
@@ -11,12 +10,12 @@ namespace Business.Concrete;
 public class OwnerManager: IOwnerService
 {
     private readonly IOwnerDal _ownerDal;
-    private readonly IVehicleDal _vehicleDal;
+    private readonly IVehicleService _vehicleService;
 
-    public OwnerManager(IOwnerDal ownerDal, IVehicleDal vehicleDal)
+    public OwnerManager(IOwnerDal ownerDal, IVehicleService vehicleService)
     {
         _ownerDal = ownerDal;
-        _vehicleDal = vehicleDal;
+        _vehicleService = vehicleService;
     }
 
     public IDataResult<List<Owner>> GetAll()
@@ -90,8 +89,8 @@ public class OwnerManager: IOwnerService
     
     private IResult CheckIfOwnerHasVehicles(int ownerId)
     {
-        var result = _vehicleDal.GetAll(v => v.OwnerId == ownerId && v.IsDeleted != true);
-        if (result.Any())
+        var result = _vehicleService.GetByOwnerId(ownerId);
+        if (result.Data.Any())
         {
             return new ErrorResult(Messages.OwnerHasVehicles);
         }

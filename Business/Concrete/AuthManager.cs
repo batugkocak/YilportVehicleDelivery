@@ -79,7 +79,7 @@ namespace Business.Concrete;
 
         public IResult UserExists(string username)
         {
-            if (_userService.GetByUsername(username)!=null)
+            if (_userService.GetByUsername(username) != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }

@@ -7,5 +7,5 @@ namespace DataAccess.Abstract;
 public interface IUserDal:IEntityRepository<User>
 {
     List<OperationClaim> GetClaims(User user);
-    List<UserForList> GetForList();
+    List<UserForTable> GetForList();
 }

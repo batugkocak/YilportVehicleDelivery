@@ -32,10 +32,10 @@ namespace Business.Concrete;
             return _userDal.Get(u => u.Username == username && u.IsDeleted != true);
         }
 
-        public IDataResult<List<UserForList>> GetForList()
+        public IDataResult<List<UserForTable>> GetForList()
         {
             var result = _userDal.GetForList();
-            return new SuccessDataResult<List<UserForList>>(result);
+            return new SuccessDataResult<List<UserForTable>>(result);
         }
 
         public IDataResult<User> GetById(int userId)

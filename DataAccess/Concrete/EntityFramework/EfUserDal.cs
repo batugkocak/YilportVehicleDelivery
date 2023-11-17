@@ -22,7 +22,7 @@ public class EfUserDal:EfEntityRepositoryBase<User, VehicleDeliveryContext>,IUse
         }
     }
 
-    public List<UserForList> GetForList()
+    public List<UserForTable> GetForList()
     {
         using (var context = new VehicleDeliveryContext())
         {
@@ -33,7 +33,7 @@ public class EfUserDal:EfEntityRepositoryBase<User, VehicleDeliveryContext>,IUse
                     on userOperationClaim.OperationClaimId equals operationClaim.Id
                 where user.IsDeleted != true
                 orderby operationClaim.Name ascending 
-                select new UserForList()
+                select new UserForTable()
                 {
                     Id = user.Id,
                     Username = user.Username,

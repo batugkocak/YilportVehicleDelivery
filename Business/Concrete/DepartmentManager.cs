@@ -11,10 +11,17 @@ namespace Business.Concrete;
 public class DepartmentManager : IDepartmentService
 {
     private IDepartmentDal _departmentDal;
+    private IVehicleService _vehicleService;
+    private IVehicleOnTaskService _vehicleOnTaskService;
+    private ITaskService _taskService;
+    
 
-    public DepartmentManager(IDepartmentDal departmentDal)
+    public DepartmentManager(IDepartmentDal departmentDal, IVehicleService vehicleService, IVehicleOnTaskService vehicleOnTaskService, ITaskService taskService )
     {
         _departmentDal = departmentDal;
+        _vehicleService = vehicleService;
+        _vehicleOnTaskService = vehicleOnTaskService;
+        _taskService = taskService;
     }
     
     public IDataResult<List<Department>> GetAll()
@@ -35,6 +42,24 @@ public class DepartmentManager : IDepartmentService
     
     public IResult Delete(int id)
     {
+          var result = CheckIfDepartmentHasVehicles(id);
+          if (!result.Success)
+          {
+              return new ErrorResult(result.Message);
+          }
+        
+          result = CheckIfDepartmentHasActiveTask(id);
+         if (!result.Success)
+         {
+             return new ErrorResult(result.Message);
+         }
+        
+         result = CheckIfDepartmentHasPredefinedTask(id);
+        if (!result.Success)
+        {
+            return new ErrorResult(result.Message);
+        }
+        
         var deletedDepartment= _departmentDal.Get(o=> o.Id == id);
         deletedDepartment.IsDeleted = true;
         _departmentDal.Update(deletedDepartment);
@@ -56,5 +81,37 @@ public class DepartmentManager : IDepartmentService
     {
         return new SuccessDataResult<List<DepartmentForTableDto>>(_departmentDal.GetForTable(), Messages.DepartmentsListed);
 
+    }
+    
+    private IResult CheckIfDepartmentHasVehicles(int departmentId)
+    {
+        var result = _vehicleService.GetByDepartmentId(departmentId);
+        if (result.Data.Any())
+        {
+            return new ErrorResult(Messages.DepartmentHasVehicles);
+        }
+        return new SuccessResult();
+    }
+    
+    private IResult CheckIfDepartmentHasActiveTask(int departmentId)
+    {
+        var result = _vehicleOnTaskService.GetByDepartmentId(departmentId);
+        if (result.Data.Any())
+        {
+            return new ErrorResult(Messages.DepartmentHasActiveTask);
+        }
+
+        return new SuccessResult();
+    }
+    
+    private IResult CheckIfDepartmentHasPredefinedTask(int departmentId)
+    {
+        var result = _taskService.GetByDepartmentId(departmentId);
+        if (result.Data.Any())
+        {
+            return new ErrorResult(Messages.DepartmantHasPredefinedTask);
+        }
+
+        return new SuccessResult();
     }
 }

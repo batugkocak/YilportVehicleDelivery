@@ -23,6 +23,18 @@ public class VehicleOnTaskController : Controller
         return Ok(result);
     }
     
+    [HttpPost]
+    public IActionResult Add(VehicleOnTask vehicleOnTask)
+    {
+        var result = _vehicleOnTaskService.Add(vehicleOnTask);
+        if (result.Success)
+        {
+            return Ok(result.Message);
+        }
+
+        return BadRequest(result.Message);
+    }
+    
     
     [Route("ForNormalTable")]
     [HttpGet]
@@ -72,13 +84,6 @@ public class VehicleOnTaskController : Controller
         return Ok(result);
     }
     
-    // [HttpPatch("finishTask/{vehicleOnTaskId}")]
-    // public IActionResult FinishTask(int vehicleOnTaskId)
-    // {
-    //     var result = _vehicleOnTaskService.FinishTask(vehicleOnTaskId);
-    //     
-    //     return Ok(result);
-    // }
     
     [Route("Finish/{taskId}")]
     [HttpPost]
@@ -119,30 +124,6 @@ public class VehicleOnTaskController : Controller
         return BadRequest(result.Message);
     }
     
-    [HttpPost]
-    public IActionResult Add(VehicleOnTask vehicleOnTask)
-    {
-        var result = _vehicleOnTaskService.Add(vehicleOnTask);
-        if (result.Success)
-        {
-            return Ok(result.Message);
-        }
-
-        return BadRequest(result.Message);
-    }
+   
     
 }
-
-/*
-{
-   "id": 68,
-   "vehicleId": 1,
-   "driverId": 1,
-   "departmentId": 1,
-   "authorizedPerson": "string",
-   "address": "Bursa",
-   "taskDefinition": "Bakım",
-   "givenDate": "2023-10-03T11:46:53",
-   "returnDate": "0001-01-01T00:00:00"
-   }
-*/

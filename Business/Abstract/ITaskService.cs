@@ -16,5 +16,6 @@ public interface ITaskService
 
     IDataResult<List<TaskDetailDto>> GetForTable();
     IDataResult<List<SelectBoxDto>> GetForSelectBox();
+    public IDataResult<List<Task>> GetByDepartmentId(int id);
 
 }

@@ -14,5 +14,8 @@ public interface IBrandService
     IResult Update(Brand brand);
     IDataResult<List<SelectBoxDto>> GetForSelectBox();
     IDataResult<List<BrandForTableDto>> GetForTable();
+    
+    
+
 
 }

@@ -120,6 +120,22 @@ public class VehicleManager : IVehicleService
         return new SuccessDataResult<List<SelectBoxDto>>(_vehicleDal.GetVehiclesForSelectBox(), Messages.VehiclesListed);
     }
 
+    public IDataResult<List<Vehicle>> GetByBrandId(int id)
+    {
+        return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(v => v.BrandId == id && v.IsDeleted != true));
+    }
+
+    public IDataResult<List<Vehicle>> GetByOwnerId(int id)
+    {
+        return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(v => v.OwnerId == id && v.IsDeleted != true));
+
+    }
+
+    public IDataResult<List<Vehicle>> GetByDepartmentId(int id)
+    {
+        return new SuccessDataResult<List<Vehicle>>(_vehicleDal.GetAll(v => v.DepartmentId == id && v.IsDeleted != true));
+    }
+
     public IResult CheckIfCarExistByPlate(String plate)
     {
         var result = _vehicleDal.GetAll(u => u.Plate == plate && u.IsDeleted != true).Any();

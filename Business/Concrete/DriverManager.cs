@@ -11,10 +11,12 @@ namespace Business.Concrete;
 public class DriverManager: IDriverService
 {
     private IDriverDal _driverDal;
+    private IVehicleOnTaskService _vehicleOnTaskService;
 
-    public DriverManager(IDriverDal driverDal)
+    public DriverManager(IDriverDal driverDal, IVehicleOnTaskService vehicleOnTaskService)
     {
         _driverDal = driverDal;
+        _vehicleOnTaskService = vehicleOnTaskService;
     }
     public IDataResult<List<Driver>> GetAll()
     {
@@ -34,9 +36,16 @@ public class DriverManager: IDriverService
 
     public IResult Delete(int id)
     {
-        var deletedDepartment= _driverDal.Get(o=> o.Id == id);
-        deletedDepartment.IsDeleted = true;
-        _driverDal.Update(deletedDepartment);
+        
+        var result = CheckIfDriverIsOnMission(id);
+        if (!result.Success)
+        {
+            return new ErrorResult(result.Message);
+        }
+        
+        var deletedDriver= _driverDal.Get(d=> d.Id == id);
+        deletedDriver.IsDeleted = true;
+        _driverDal.Update(deletedDriver);
       return new SuccessResult(Messages.DriverDeleted);
     }
 
@@ -55,5 +64,16 @@ public class DriverManager: IDriverService
     public IDataResult<List<SelectBoxDto>> GetForSelectBox()
     {
         return new SuccessDataResult<List<SelectBoxDto>>(_driverDal.GetDriversForSelectBox(), Messages.DriversListed);
+    }
+    
+    private IResult CheckIfDriverIsOnMission(int driverId)
+    {
+        var result = _vehicleOnTaskService.GetByDriverId(driverId);
+         if (result.Data.Any())
+         {
+             return new ErrorResult(Messages.DriverIsOnMission);
+         }
+
+        return new SuccessResult();
     }
 }
