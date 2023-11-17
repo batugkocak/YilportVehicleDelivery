@@ -7,7 +7,9 @@ using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
+using System.Net;
 
 var  MyAllowSpecificOrigins = "_myFrontEnd";
 
@@ -84,6 +86,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseExceptionHandler(async options =>
+{
+    options.Run(async handler =>
+    {
+        handler.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+        handler.Response.ContentType = "text/html";
+        var exceptionObject = handler.Features.Get<IExceptionHandlerFeature>();
+        if (null != exceptionObject)
+        {
+            var errorMessage = $"{exceptionObject.Error.Message}";
+            await handler.Response.WriteAsync(errorMessage).ConfigureAwait(false);
+        }
+    });
+});
 
 app.UseHttpsRedirection();
 
