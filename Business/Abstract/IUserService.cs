@@ -1,5 +1,6 @@
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs.User;
 
 namespace Business.Abstract;
@@ -13,7 +14,9 @@ public interface IUserService
     IDataResult<List<UserForTable>> GetForList();
     
     IDataResult<User> GetById(int userId);
-    
+
+    IResult Update(User user);
+
     IResult Delete(int id);
     
 }

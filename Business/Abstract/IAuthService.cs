@@ -10,7 +10,8 @@ public interface IAuthService
     IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password);
     
     IDataResult<User> Login(UserForLoginDto userForLoginDto);
-    
+    IDataResult<User> ChangePassword(UserForPasswordChange userForPasswordChange);
+
     IResult DeleteUser(int id);
     IResult UserExists(string username);
     IDataResult<AccessToken> CreateAccessToken(User user);

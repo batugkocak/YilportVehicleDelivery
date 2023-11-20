@@ -72,12 +72,15 @@ public static class Messages
     public const string UserRegistered = "Kullanıcı başarıyla kayıt edildi.";
     public const string UserDeleted = "Kullanıcı başarıyla silindi.";
     public const string UserNotFound = "Böyle bir kullanıcı yok.";
+    public const string UserUpdated = "Kullanıcı başarıyla güncellendi.";
+
     public const string PasswordError = "Şifre yanlış.";
     public const string UserAlreadyExists = "Böyle bir kullanıcı zaten var.";
     public const string SuccessfulLogin = "Başarıyla giriş yapıldı.";
     public const string AccessTokenCreated = "Giriş tokeni oluşturuldu.";
+    public const string SuccessfulPasswordChange = "Başarıyla şifre değiştirildi.";
 
-    
+
     public const string NotFound = "İstenilen veri(ler) bulunamadı.";
     public const string AuthorizationDenied = "Bu işlemi yapmaya yetkiniz yok..";
 
