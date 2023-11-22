@@ -1,4 +1,3 @@
-using Business.Constants;
 using Entities.Concrete;
 using FluentValidation;
 
@@ -8,9 +7,8 @@ public class VehicleOnTaskValidatior : AbstractValidator<VehicleOnTask>
 {
     public VehicleOnTaskValidatior()
     {
-        RuleFor(x => x.Address).NotEmpty().Length(5,8);
-       
-
-
+        RuleFor(x => x.TaskDefinition).NotEmpty().Length(4, 30).WithMessage("Görev adýnda bir sorun var.");
+        RuleFor(x => x.Address).NotEmpty().MaximumLength(50);
+        RuleFor(x => x.AuthorizedPerson).MaximumLength(30);
     }
 }

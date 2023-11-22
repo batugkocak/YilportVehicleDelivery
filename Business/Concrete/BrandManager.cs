@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -28,6 +30,8 @@ public class BrandManager : IBrandService
         return new SuccessDataResult<Brand>(_brandDal.Get(b => b.Id == brandId), Messages.BrandListed);
     }
 
+
+    [ValidationAspect(typeof(BrandValidator))]
     public IResult Add(Brand brand)
     {
         if (BrandExists(brand.Name).Success)
@@ -51,6 +55,7 @@ public class BrandManager : IBrandService
         return new SuccessResult(Messages.BrandDeleted);
     }
 
+    [ValidationAspect(typeof(BrandValidator))]
     public IResult Update(Brand brand)
     {
         if (BrandExists(brand.Name).Success)

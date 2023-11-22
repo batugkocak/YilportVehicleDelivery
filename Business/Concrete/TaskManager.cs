@@ -1,6 +1,8 @@
 
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -48,6 +50,7 @@ public class TaskManager : ITaskService
         return new SuccessDataResult<Task>(_taskDal.Get(d => d.Id == taskId), Messages.TaskListed);
     }
 
+    [ValidationAspect(typeof(TaskValidator))]
     public IResult Add(Task task)
     {
         _taskDal.Add(task);
@@ -63,6 +66,7 @@ public class TaskManager : ITaskService
         return new SuccessResult(Messages.TaskDeleted);
     }
 
+    [ValidationAspect(typeof(TaskValidator))]
     public IResult Update(Task task)
     {
         _taskDal.Update(task);

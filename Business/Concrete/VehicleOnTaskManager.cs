@@ -1,6 +1,8 @@
 using Business.Abstract;
 using Business.Aspects.Autofac;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Extensions;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -90,6 +92,8 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     }
 
     [SecuredOperation("admin,user")]
+    [ValidationAspect(typeof(VehicleOnTaskValidatior))]
+
     public IResult Add(VehicleOnTask vehicleOnTask)
     {
         var result = BusinessRules.Run(CheckIfVehicleOnDutyById(vehicleOnTask.VehicleId));
@@ -108,6 +112,7 @@ public class VehicleOnTaskManager: IVehicleOnTaskService
     }
 
     [SecuredOperation("admin,user")]
+    [ValidationAspect(typeof(VehicleOnTaskValidatior))]
     public IResult Update(VehicleOnTask vehicleOnTask)
     {
         var oldVehicleOnTask = _vehicleOnTaskDal.Get(v => v.Id == vehicleOnTask.Id);

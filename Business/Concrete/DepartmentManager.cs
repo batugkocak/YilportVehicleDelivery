@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -33,7 +35,8 @@ public class DepartmentManager : IDepartmentService
     {
         return new SuccessDataResult<Department>(_departmentDal.Get(d => d.Id == departmentId));
     }
-    
+
+    [ValidationAspect(typeof(DepartmentValidator))]
     public IResult Add(Department department)
     {
         _departmentDal.Add(department);
@@ -65,7 +68,8 @@ public class DepartmentManager : IDepartmentService
         _departmentDal.Update(deletedDepartment);
         return new SuccessResult(Messages.DepartmentDeleted);
     }
-    
+
+    [ValidationAspect(typeof(DepartmentValidator))]
     public IResult Update(Department department)
     {
         _departmentDal.Update(department);

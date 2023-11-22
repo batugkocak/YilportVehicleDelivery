@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -28,6 +30,7 @@ public class OwnerManager: IOwnerService
         return new SuccessDataResult<Owner>(_ownerDal.Get(d => d.Id == ownerId), Messages.OwnerListed);
     }
 
+    [ValidationAspect(typeof(OwnerValidator))]
     public IResult Add(Owner owner)
     {
         
@@ -54,6 +57,7 @@ public class OwnerManager: IOwnerService
         return new SuccessResult(Messages.OwnerDeleted);
     }
 
+    [ValidationAspect(typeof(OwnerValidator))]
     public IResult Update(Owner owner)
     {
         var ownerExists = OwnerExists(owner.Name);

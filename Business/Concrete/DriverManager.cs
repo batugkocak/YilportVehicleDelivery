@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -28,6 +30,7 @@ public class DriverManager: IDriverService
         return new SuccessDataResult<Driver>(_driverDal.Get(d => d.Id == driverId), Messages.DriverListed);
     }
 
+    [ValidationAspect(typeof(DriverValidator))]
     public IResult Add(Driver driver)
     {
         _driverDal.Add(driver);
@@ -49,6 +52,7 @@ public class DriverManager: IDriverService
       return new SuccessResult(Messages.DriverDeleted);
     }
 
+    [ValidationAspect(typeof(DriverValidator))]
     public IResult Update(Driver driver)
     {
         _driverDal.Update(driver);
