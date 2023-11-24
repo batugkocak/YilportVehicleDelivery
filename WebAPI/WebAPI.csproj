@@ -18,4 +18,13 @@
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="PointCore.Framework">
+        <HintPath>..\_CommonDll\PointCore.Framework.dll</HintPath>
+      </Reference>
+      <Reference Include="Verify.Ldap.Domain">
+        <HintPath>..\_CommonDll\Verify.Ldap.Domain.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

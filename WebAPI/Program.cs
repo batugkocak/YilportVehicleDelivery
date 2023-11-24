@@ -11,14 +11,14 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
 using System.Net;
 
-var  MyAllowSpecificOrigins = "_myFrontEnd";
+var MyAllowSpecificOrigins = "_myFrontEnd";
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy  =>
+        policy =>
         {
             policy.WithOrigins("*").AllowAnyHeader().AllowAnyOrigin();
         });
@@ -87,6 +87,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+/* 
 app.UseExceptionHandler(async options =>
 {
     options.Run(async handler =>
@@ -101,6 +102,7 @@ app.UseExceptionHandler(async options =>
         }
     });
 });
+*/
 
 app.UseHttpsRedirection();
 

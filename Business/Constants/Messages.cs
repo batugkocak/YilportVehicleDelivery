@@ -80,6 +80,9 @@ public static class Messages
     public const string AccessTokenCreated = "Giriş tokeni oluşturuldu.";
     public const string SuccessfulPasswordChange = "Başarıyla şifre değiştirildi.";
 
+    public const string AccessTokenError = "Bir sorun meydana geldi. Sorun doğrulama tipi olabilir.";
+    public const string PasswordRequired = "Form Kullanıcıları için şifre gerekli.";
+
 
     public const string NotFound = "İstenilen veri(ler) bulunamadı.";
     public const string AuthorizationDenied = "Bu işlemi yapmaya yetkiniz yok..";

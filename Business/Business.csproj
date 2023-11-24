@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -20,8 +20,20 @@
       <PackageReference Include="FluentValidation" Version="11.8.0" />
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="ServiceStack.Interfaces" Version="6.0.0" />
 
 
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Reference Include="PointCore.Framework">
+        <HintPath>..\_CommonDll\PointCore.Framework.dll</HintPath>
+      </Reference>
+      <Reference Include="Verify.Ldap.Domain">
+        <HintPath>..\_CommonDll\Verify.Ldap.Domain.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 
