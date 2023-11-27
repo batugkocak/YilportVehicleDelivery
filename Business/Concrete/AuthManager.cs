@@ -37,7 +37,7 @@ public class AuthManager : IAuthService
     {
         byte[] passwordHash, passwordSalt;
 
-        if (userForRegisterDto.VerificationType == (byte)VerificationType.Form)
+        if (userForRegisterDto.VerificationType == (int)VerificationType.Form)
         {
             if (userForRegisterDto.Password == null)
             {
@@ -58,7 +58,7 @@ public class AuthManager : IAuthService
             LastName = userForRegisterDto.LastName,
             PasswordHash = passwordHash,
             PasswordSalt = passwordSalt,
-            VerificationType = 2,
+            VerificationType = (byte) userForRegisterDto.VerificationType,
             Status = true,
             Creator = userForRegisterDto.Creator
         };
