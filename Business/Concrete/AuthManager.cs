@@ -86,12 +86,13 @@ public class AuthManager : IAuthService
 
         if (userToCheck.VerificationType == (byte)VerificationType.Ldap)
         {
-          var response =  await AuthenticateLdapUserAsync(userForLoginDto);
+
+            var response = await AuthenticateLdapUserAsync(userForLoginDto);
             if (response.Success)
             {
-                return new SuccessDataResult<User>(userToCheck, Messages.SuccessfulLogin);
+                return new SuccessDataResult<User>(userToCheck, response.Message);
             }
-            return new ErrorDataResult<User>(Messages.PasswordError);
+            return new ErrorDataResult<User>(response.Message);
         }
 
         if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
@@ -159,6 +160,8 @@ public class AuthManager : IAuthService
         var accessToken = _tokenHelper.CreateToken(userDataResult.Data, claims);
         return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
     }
+
+    //TODO: refactor httpclient usage to more optimized way
     public async Task<IResult> AuthenticateLdapUserAsync(UserForLoginDto userForLoginDto)
     {
         var getLdapAuthenticate = new GetLdapAuthenticate
@@ -187,12 +190,13 @@ public class AuthManager : IAuthService
         }
 
 
-        if(result == null)
+        if (result == null)
         {
             return new ErrorResult("Bir hata meydana geldi.");
 
         }
-        else if(result.responseCode == "Fail"){
+        else if (result.responseCode == "Fail")
+        {
             return new ErrorResult(Messages.PasswordError);
         }
 
