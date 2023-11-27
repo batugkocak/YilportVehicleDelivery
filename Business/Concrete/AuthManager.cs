@@ -110,6 +110,10 @@ public class AuthManager : IAuthService
         {
             return new ErrorDataResult<User>(Messages.UserNotFound);
         }
+        else if(userToCheck.VerificationType == (byte)VerificationType.Ldap)
+        {
+            return new ErrorDataResult<User>(Messages.LdapUserHasNoPassword);
+        }
 
         if (!HashingHelper.VerifyPasswordHash(userForPasswordChange.OldPassword, userToCheck.PasswordHash, userToCheck.PasswordSalt))
         {

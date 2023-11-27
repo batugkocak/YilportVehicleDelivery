@@ -1,3 +1,4 @@
+using Business.Constants;
 using Core.DataAccess.EntityFramework;
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
@@ -40,7 +41,7 @@ public class EfUserDal:EfEntityRepositoryBase<User, VehicleDeliveryContext>,IUse
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Role = operationClaim.Name,
-                    VerificationType = "Test"
+                    VerificationType = user.VerificationType == 2 ? "Form" : user.VerificationType == 2 ? "LDAP" : "None"
                 };
             return result.ToList();
         }
