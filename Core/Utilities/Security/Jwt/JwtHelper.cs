@@ -57,7 +57,8 @@ public class JwtHelper : ITokenHelper
         claims.AddNameIdentifier(user.Id.ToString());
         claims.AddUsername(user.Username);
         claims.AddName($"{user.FirstName} {user.LastName}");
-        claims.AddRoles(operationClaims.Select(c=>c.Name).ToArray()); 
+        claims.AddRoles(operationClaims.Select(c=>c.Name).ToArray());
+        claims.AddVerificationType(user.VerificationType.ToString());
         
         return claims;
     }

@@ -41,7 +41,7 @@ public class EfUserDal:EfEntityRepositoryBase<User, VehicleDeliveryContext>,IUse
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Role = operationClaim.Name,
-                    VerificationType = user.VerificationType == 2 ? "Form" : user.VerificationType == 2 ? "LDAP" : "None"
+                    VerificationType = user.VerificationType == 2 ? "Form" : user.VerificationType == 1 ? "LDAP" : "None"
                 };
             return result.ToList();
         }

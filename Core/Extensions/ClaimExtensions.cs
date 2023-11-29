@@ -24,4 +24,10 @@ public static class ClaimExtensions
     {
         roles.ToList().ForEach(role=>claims.Add(new Claim("roles", role)));
     }
+
+    public static void AddVerificationType(this ICollection<Claim> claims, string verificationType)
+    { 
+        claims.Add(new Claim("verificationType", verificationType));
+    }
+
 }
